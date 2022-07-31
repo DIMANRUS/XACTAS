@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>xactas.ico</ApplicationIcon>
+    <Authors>DIMANRUS</Authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Product>XACTAS</Product>
+    <Copyright>Dmitry Sorokin (DIMANRUS)</Copyright>
+    <PackageProjectUrl>dimanrus.ru</PackageProjectUrl>
+    <AssemblyName>XACTAS</AssemblyName>
+    <PackageIcon>xactas.png</PackageIcon>
+    <AssemblyVersion>2.2.1</AssemblyVersion>
+    <FileVersion>2.2.1</FileVersion>
+    <Version>2.2.1</Version>
+    <SignAssembly>False</SignAssembly>
+    <AssemblyOriginatorKeyFile>DIMANRUS.pfx</AssemblyOriginatorKeyFile>
+    <DelaySign>true</DelaySign>
+    <Platforms>AnyCPU;x64</Platforms>
+    <Company>DIMANRUS</Company>
+    <IsPublishable>True</IsPublishable>
+    <DebugType>embedded</DebugType>
+    <NeutralLanguage>ru</NeutralLanguage>
+    <Description>Редактируйте Android макеты в Android Stduio при работе с Xamarin в Visual Stduio.</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://gitflic.ru/project/dimanrus/xactas</RepositoryUrl>
+    <PackageTags>xactas, dimanrus, xamarin</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Icons\add.png" />
+    <None Remove="Assets\Icons\AndroidStudio.png" />
+    <None Remove="Assets\Icons\brush.png" />
+    <None Remove="Assets\Icons\folder.png" />
+    <None Remove="Assets\Icons\FolderAndroidStudio.png" />
+    <None Remove="Assets\Icons\FolderVisualStudio.png" />
+    <None Remove="Assets\Icons\help.png" />
+    <None Remove="Assets\Icons\Languages\en.png" />
+    <None Remove="Assets\Icons\Languages\ru.png" />
+    <None Remove="Assets\Icons\launch.png" />
+    <None Remove="Assets\Icons\remove.png" />
+    <None Remove="Assets\Icons\stop.png" />
+    <None Remove="Assets\Icons\VisualStudio.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="xactas.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\Add.png" />
+    <Resource Include="Assets\Icons\AndroidStudio.png" />
+    <Resource Include="Assets\Icons\Brush.png" />
+    <Resource Include="Assets\Icons\Folder.png" />
+    <Resource Include="Assets\Icons\FolderAndroidStudio.png" />
+    <Resource Include="Assets\Icons\FolderVisualStudio.png" />
+    <Resource Include="Assets\Icons\Help.png" />
+    <Resource Include="Assets\Icons\Languages\EN.png" />
+    <Resource Include="Assets\Icons\Languages\RU.png" />
+    <Resource Include="Assets\Icons\Launch.png" />
+    <Resource Include="Assets\Icons\Remove.png" />
+    <Resource Include="Assets\Icons\Stop.png" />
+    <Resource Include="Assets\Icons\VisualStudio.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="Assets\Xactas.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.en-US.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Assets\Xactas.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
