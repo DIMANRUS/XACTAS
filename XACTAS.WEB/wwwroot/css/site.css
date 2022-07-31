@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Cunia';
+    src: url('../css/fonts/cunia.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.btn {
+    margin: 8px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--color);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.name-block {
+    margin: 30px;
+    font-weight: bold;
+    color: var(--color);
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+hr {
+    margin: 0 35%;
+    background-color: darkorange;
+    opacity: 1;
+    border-radius: 4px;
+}
+
+:root {
+    --background: black;
+    --color: white;
+    --toggler_style: url("../images/toggle/toggle-dark.webp");
+}
+/*#region NavBar*/
+/*#region DropDown Select languages*/
+.li-select-language ul li a img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.li-select-language ul li a span {
+    font-size: 17px;
+    color: var(--color);
+}
+
+.dropdown-menu {
+    background-color: var(--background);
+}
+
+.dropdown-item:hover {
+    background-color: darkorange;
+}
+/*#endregion*/
+.navbar-brand {
+    font-family: 'Cunia';
+    color: var(--color);
+    font-size: 26px;
+}
+
+    .navbar-brand > img {
+        margin-right: 8px;
+    }
+
+.navbar {
+    padding: 0;
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px var(--color);
+    backdrop-filter: blur(20px);
+    background-color: rgba(255,255,255,.3);
+}
+
+.nav-link {
+    color: var(--color);
+    font-weight: bold;
+}
+
+    .nav-link:hover, .navbar-brand:hover {
+        color: orange;
+    }
+
+.navbar-toggler {
+    border-color: var(--color);
+}
+
+.navbar-toggler-icon {
+    background-image: var(--toggler_style);
+}
+
+.navbar-nav > li > a > img {
+    height: 20px;
+    margin-right: 6px;
+}
+
+.navbar-brand-logo {
+    box-shadow: 0 0 10px var(--color);
+    background-color: var(--background);
+    border-radius: 5px;
+}
+
+.nav-item {
+    margin-right: 8px;
+}
+/*#endregion*/
+/*#region Buttons Menu*/
+#buttons_menu {
+    position: fixed;
+    bottom: 5px;
+    width: 44px;
+    right: 5px;
+    height: auto;
+    cursor: pointer;
+}
+
+#butmenu_changetheme {
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px var(--color);
+    margin: 2px;
+}
+
+#butmenu_settings {
+    background-color: var(--background);
+}
+
+#butmenu_changetheme {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%);
+}
+/*#endregion*/
+/*#region Scroll Bar*/
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: darkorange;
+    border-radius: 10px;
+    position: absolute;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: gray;
+    }
+/*#endregion*/
+/*#region Top Block Section*/
+.topBlockSection {
+    background: linear-gradient(-45deg, #7acf00, #00a2ff);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    padding-top: 50px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.xactas-logo {
+    box-shadow: 0 0 10px black;
+    border-radius: 25px;
+    height: 250px;
+    margin-top: 40px;
+}
+
+.topBlockSection h1 {
+    font-family: 'Cunia';
+    color: white;
+    font-size: 50px;
+    margin: 15px;
+}
+
+.topBlockSection h2 {
+    color: white;
+    padding-bottom: 60px;
+}
+/*#endregion*/
+/*#region UI Block*/
+.accordion {
+    margin-bottom: 50px;
+    background-color: var(--background);
+}
+
+.accordion-body {
+    background-color: var(--background);
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.accordion-item {
+    background-color: var(--background);
+    box-shadow: 0 0 10px var(--color);
+}
+
+.accordion-button {
+    background-color: var(--background);
+    padding: 7px;
+    padding-left: 14px;
+}
+
+    .accordion-button > p {
+        font-family: 'Cunia';
+        color: var(--color);
+        margin-right: 15px;
+        font-size: 30px;
+    }
+
+    .accordion-button > img {
+        height: 35px;
+        margin: 3px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--background);
+    }
+/*#endregion*/
+/*#region Video Block*/
+iframe {
+    border-radius: 30px;
+    box-shadow: 0 0 10px var(--color);
+    width: 60%;
+    height: 400px;
+    margin-bottom: 20px;
+}
+/*#endregion*/
+/*#region Rider*/
+.rider-logo-block > img {
+    width: 140px;
+    margin: 5px;
+}
+
+.rider-block {
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+    .rider-block > div > p {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+/*#endregion*/
+/*#region Download Block*/
+.download-block {
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--color);
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: fit-content;
+    padding: 5px 40px 10px 40px;
+}
+
+    .download-block > p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .download-block > p {
+        font-weight: bold;
+    }
+/*#endregion*/
+/*#region Footer*/
+.footer {
+    text-align: center;
+}
+
+    .footer h3 {
+        font-size: 20px;
+        letter-spacing: 15px;
+        margin: 20px;
+        font-family: 'Cunia';
+    }
+
+.iconsupport img {
+    height: 35px;
+    margin-top: 10px;
+}
+
+.copyright {
+    padding: 10px;
+}
+/*#endregion*/
+/*#region Style for Other Devices*/
+@media screen and (max-width: 1280px) {
+    iframe {
+        width: 85%;
+        height: 280px;
+    }
+
+    .rider-block > div > p {
+        margin: 5px;
+    }
+}
+/*#endregion*/
+/*#region Shared*/
+.shadow-block {
+    box-shadow: 0 0 10px var(--color);
+}
+/*#endregion*/

@@ -1,0 +1,184 @@
+﻿@page "/"
+@using Microsoft.Extensions.Localization
+@inject NavigationManager _navigationManager
+@inject IStringLocalizer<App> _localizer
+
+<!--#region Navigation Bar-->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container" id="home">
+        <a class="navbar-brand" href="#">
+            XACTAS
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#ui" target="_parent"><img src="images/navbar/ui.webp" alt="" />UI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="#video">
+                        <img src="images/navbar/video.webp" alt="" />@_localizer["video"]
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="#download">
+                        <img src="images/navbar/download.webp" alt="" /><span>@_localizer["download"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS">
+                        <img src="images/navbar/code.webp" alt="" /><span>@_localizer["code"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS/issues">
+                        <img src="images/navbar/bug.webp" alt="" /><span>@_localizer["bug"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS/discussions">
+                        <img src="images/navbar/idea.webp" alt="" /><span>@_localizer["idea"]</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://dimanrus.ru/support">
+                        <img src="images/navbar/support.webp" alt="" /><span>@_localizer["support"]</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown li-select-language">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/languages/language.webp" alt="" /><span>@_localizer["language"]</span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("en-US"))">
+                                <img src="images/languages/falcon.webp" alt="" /><span>English</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ru-RU"))">
+                                <img src="images/languages/kremlin.webp" alt="" /><span>Русский</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--#endregion-->
+<section class="topBlockSection">
+    <div class="container justify-content-center">
+        <img class="xactas-logo" src="images/xactas.webp" alt="" title="logo" />
+        <h1>XACTAS</h1>
+        <h2>@_localizer["description"]</h2>
+    </div>
+</section>
+<section class="container justify-content-start">
+    <h3 class="name-block">Rider</h3>
+    <div class="row rider-block shadow-block">
+        <div class="col-3 rider-logo-block">
+            <img alt="rider" title="rider" src="images/rider.webp" />
+            <a href="https://www.jetbrains.com/ru-ru/rider/" class="btn btn-primary" style="display: block">@_localizer["download"]</a>
+        </div>
+        <div class="col-9">
+            <p>@_localizer["rider"]</p>
+        </div>
+    </div>
+</section>
+<hr />
+<section class="container justify-content-center" id="ui">
+    <h3 class="name-block">@_localizer["uiNameBlock"]</h3>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <p>App</p>
+                    <img alt="" src="images/uiApp/folder.webp" />
+                    <img alt="" src="images/uiApp/launch.webp" />
+                    <img alt="" src="images/uiApp/vs.webp" />
+                    <img alt="" src="images/uiApp/android-studio.webp" />
+                    <img alt="" src="images/uiApp/remove.webp" />
+                </button>
+            </p>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["projectPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <img alt="" title="" src="images/uiApp/FolderVS.webp" />
+                    <img alt="" title="" src="images/uiApp/FolderAS.webp" />
+                    <img alt="" title="" src="images/uiApp/RU.webp" />
+                    <img alt="" title="" src="images/uiApp/brush.webp" />
+                    <img alt="" title="" src="images/uiApp/help.webp" />
+                </button>
+            </p>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["optionPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <p>App</p>
+                    <img alt="" src="images/uiApp/stop.webp" />
+                </button>
+            </p>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["stopPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <img alt="" title="" src="images/uiApp/add.webp" />
+                </button>
+            </p>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["addPanelDescription"]
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+<section class="container justify-content-center" id="video">
+    <h3 class="name-block">@_localizer["video"]</h3>
+    <iframe src="https://www.youtube-nocookie.com/embed/xyG8lwxvC9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<hr />
+<section id="download" class="container justify-content-center">
+    <h3 class="name-block">@_localizer["download"]</h3>
+    <div class="row shadow-block rider-block">
+        <div class="col-3 download-runtime-block">
+            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" class="btn btn-primary" style="display: block">.NET 6 Runtime</a>
+            <a href="https://docs.microsoft.com/ru-RU/cpp/windows/latest-supported-vc-redist?view=msvc-160" class="btn btn-primary" style="display: block">VC 2015-2022</a>
+        </div>
+        <div class="col-9">
+            <p>@_localizer["downloadFile"]</p>
+        </div>
+    </div>
+    <div class="download-block">
+        <img alt="" src="images/windows.webp" />
+        <p>WINDOWS</p>
+        <p>2.2.1</p>
+        <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>
+    </div>
+</section>
+<!--#region Code-->
+@code {
+    public void OnSelectedLanguage(string culture) =>
+        _navigationManager.NavigateTo($"/Culture/SetCulture?culture={Uri.EscapeDataString(culture)}", true);
+}
+<!--#endregion-->

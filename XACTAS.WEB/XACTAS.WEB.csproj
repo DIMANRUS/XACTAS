@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AspNetCoreModuleName>AspNetCoreModule</AspNetCoreModuleName>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TypeScriptTarget>ES6</TypeScriptTarget>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>1ce6c3e3-41cd-431e-9687-5b6c3984c910</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\images\uiApp\add.png" />
+    <Resource Include="wwwroot\images\uiApp\android-studio.png" />
+    <Resource Include="wwwroot\images\uiApp\brush.png" />
+    <Resource Include="wwwroot\images\uiApp\folder.png" />
+    <Resource Include="wwwroot\images\uiApp\FolderAS.png" />
+    <Resource Include="wwwroot\images\uiApp\FolderVS.png" />
+    <Resource Include="wwwroot\images\uiApp\help.png" />
+    <Resource Include="wwwroot\images\uiApp\launch.png" />
+    <Resource Include="wwwroot\images\uiApp\remove.png" />
+    <Resource Include="wwwroot\images\uiApp\stop.png" />
+    <Resource Include="wwwroot\images\uiApp\vs.png" />
+    <Resource Include="wwwroot\images\uiApp\world.png" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

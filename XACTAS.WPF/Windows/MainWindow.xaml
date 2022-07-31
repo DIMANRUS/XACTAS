@@ -1,0 +1,168 @@
+﻿<Window x:Class="XACTAS.WPF.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:resources="clr-namespace:XACTAS.WPF.Properties"
+        mc:Ignorable="d"
+        MinHeight="600"
+        MinWidth="1000"
+        Title="{x:Static resources:Resources.Project}"
+        xmlns:models="clr-namespace:Models;assembly=Models"
+        xmlns:mvvm="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:XACTAS.WPF.ViewModels"
+        Loaded="Page_Loaded"
+        Background="{Binding BackgroundBrush}"
+        WindowStartupLocation="CenterScreen"
+        x:Name="Root">
+    <Window.DataContext>
+        <vm:ProjectWinowViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type Border}"
+                   x:Key="BorderStyle">
+                <Setter Property="Margin"
+                        Value="10" />
+                <Setter Property="CornerRadius"
+                        Value="12" />
+                <Setter Property="Padding"
+                        Value="20,0,20,0" />
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect Color="{Binding ElementName=Root, Path=DataContext.ForegroundColor}"
+                                          BlurRadius="20"
+                                          ShadowDepth="0" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="{x:Type Image}">
+                <Setter Property="Height"
+                        Value="30" />
+                <Setter Property="Cursor"
+                        Value="Hand" />
+                <Setter Property="Margin"
+                        Value="5" />
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ProjectsControl"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Left">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type models:Project}">
+                        <Border Style="{StaticResource BorderStyle}"
+                                Background="{Binding ElementName=Root, Path=DataContext.BackgroundBrush}">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0"
+                                                  Direction="0"
+                                                  Opacity="1"
+                                                  BlurRadius="20"
+                                                  Color="{Binding ElementName=Root, Path=DataContext.ForegroundColor}" />
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding Name}"
+                                           FontSize="30"
+                                           Margin="0,0,20,5"
+                                           Foreground="{Binding ElementName=Root, Path=DataContext.ForegroundBrush}" />
+                                <Image Source="pack://application:,,,/Assets/Icons/Folder.png"
+                                       Height="30"
+                                       Tag="{Binding VsProjectPath}"
+                                       MouseLeftButtonDown="OpenFolder_MouseLeftButtonDown"
+                                       Cursor="Hand"
+                                       Margin="5" />
+                                <Image Source="pack://application:,,,/Assets/Icons/Launch.png"
+                                       Height="30"
+                                       Tag="{Binding ProjectId}"
+                                       Cursor="Hand"
+                                       MouseLeftButtonDown="Launch_MouseLeftButtonDown"
+                                       Margin="5" />
+                                <Image Source="pack://application:,,,/Assets/Icons/VisualStudio.png"
+                                       Height="30"
+                                       Tag="{Binding ProjectId}"
+                                       Cursor="Hand"
+                                       MouseLeftButtonDown="LaunchVS_MouseLeftButtonDown"
+                                       Margin="5" />
+                                <Image Source="pack://application:,,,/Assets/Icons/AndroidStudio.png"
+                                       Height="30"
+                                       Tag="{Binding ProjectId}"
+                                       Cursor="Hand"
+                                       MouseLeftButtonDown="LaunchAS_MouseLeftButtonDown"
+                                       Margin="5" />
+                                <Image Source="pack://application:,,,/Assets/Icons/Remove.png"
+                                       Height="30"
+                                       Tag="{Binding ProjectId}"
+                                       Cursor="Hand"
+                                       MouseLeftButtonDown="RemoveProject_MouseLeftButtonDown"
+                                       Margin="5" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <Border Style="{StaticResource BorderStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Padding="0"
+                x:Name="AddProjectBlock"
+                Background="{Binding BackgroundBrush}">
+            <Image Source="pack://application:,,,/Assets/Icons/Add.png"
+                   MouseLeftButtonDown="AddProject_MouseLeftButtonDown"
+                   Height="30" />
+        </Border>
+        <Border Style="{StaticResource BorderStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Right"
+                Padding="10,0,10,0"
+                x:Name="OptionBlock"
+                Background="{Binding BackgroundBrush}">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="pack://application:,,,/Assets/Icons/FolderAndroidStudio.png"
+                       MouseLeftButtonDown="SelectASPath_MouseLeftButtonDown" />
+                <Image Source="pack://application:,,,/Assets/Icons/FolderVisualStudio.png"
+                       MouseLeftButtonDown="SelectVSPath_MouseLeftButtonDown" />
+                <Image Source="{Binding ImageSourceCurrentLanguage}">
+                    <mvvm:Interaction.Triggers>
+                        <mvvm:EventTrigger EventName="MouseLeftButtonDown">
+                            <mvvm:InvokeCommandAction Command="{Binding Mode=OneWay, Path=ChangeLanguage}" />
+                        </mvvm:EventTrigger>
+                    </mvvm:Interaction.Triggers>
+                </Image>
+                <Image Source="pack://application:,,,/Assets/Icons/Brush.png">
+                    <mvvm:Interaction.Triggers>
+                        <mvvm:EventTrigger EventName="MouseLeftButtonDown">
+                            <mvvm:InvokeCommandAction Command="{Binding Mode=OneWay, Path=ChangeTheme}" />
+                        </mvvm:EventTrigger>
+                    </mvvm:Interaction.Triggers>
+                </Image>
+                <Image Source="pack://application:,,,/Assets/Icons/Help.png"
+                       MouseLeftButtonDown="Help_MouseLeftButtonDown" />
+            </StackPanel>
+        </Border>
+        <Border Style="{StaticResource BorderStyle}"
+                VerticalAlignment="Bottom"
+                HorizontalAlignment="Left"
+                Padding="4,0,4,0"
+                x:Name="StopBlock"
+                Visibility="Collapsed"
+                Background="{Binding BackgroundBrush}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="26"
+                           Margin="10,0,5,5"
+                           x:Name="LaunchingProjectName"
+                           Foreground="{Binding ForegroundBrush}" />
+                <Image Source="pack://application:,,,/Assets/Icons/Stop.png"
+                       Height="30"
+                       MouseLeftButtonDown="StopWatcher_MouseLeftButtonDown" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

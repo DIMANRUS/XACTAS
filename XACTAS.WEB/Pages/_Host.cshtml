@@ -1,0 +1,56 @@
+﻿@page "/"
+@namespace XACTAS.WEB.Pages
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<App> _localizer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <!--#region Meta-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="DIMANRUS" />
+    <meta name="description" content="XACTAS - создавайте UI Xamarin.Android приложения в Android Studio." />
+    <meta name="keywords" content="" />
+    <meta property="og:title" content="XACTAS - создавайте UI Xamarin.Android приложения в Android Studio." />
+    <meta property="og:url" content="https://xactas.dimanrus.ru" />
+    <meta name="robots" content="all" />
+    <!--#endregion-->
+    <title>XACTAS</title>
+    <base href="~/" />
+    <link rel="shortcut icon" href="images/xactas.ico" type="image/x-icon" />
+    <!--#region Style-->
+    <link href="css/boostrap.min.css" rel="stylesheet" />
+    <link rel="preload" as="font" />
+    <link href="css/site.css" rel="stylesheet" />
+    <!--#endregion-->
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+    <div id="buttons_menu">
+        <img alt="" id="butmenu_changetheme" src="images/butmenu/brush.webp" onclick="Click_ButTheme()" />
+    </div>
+    <footer class="container footer">
+        <hr>
+        <div class="row align-items-start">
+            <div class="col-lg">
+                <h3>DIMANRUS</h3>
+            </div>
+            <div class="col-lg-12 text-center">
+                <h6 class="copyright">&copy; @_localizer["copyDimanrus"]</h6>
+                <h6 class="copyright">@_localizer["copyIcons"] <a href="https://icons8.ru/">&copy; 2022 Icons8 LLC</a></h6>
+            </div>
+        </div>
+    </footer>
+    <!--#region JavaScript-->
+    <script src="_framework/blazor.server.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/site.js"></script>
+    <!--#endregion-->
+</body>
+</html>
