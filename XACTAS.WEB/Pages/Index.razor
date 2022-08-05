@@ -4,7 +4,7 @@
 @inject IStringLocalizer<App> _localizer
 
 <!--#region Navigation Bar-->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar shadow navbar-expand-lg fixed-top">
     <div class="container" id="home">
         <a class="navbar-brand" href="#">
             XACTAS
@@ -18,15 +18,15 @@
                     <a class="nav-link" href="#ui" target="_parent"><img src="images/navbar/ui.webp" alt="" />UI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="#video">
+                    <a class="nav-link" target="_parent" href="https://www.youtube.com/watch?v=xyG8lwxvC9s">
                         <img src="images/navbar/video.webp" alt="" />@_localizer["video"]
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="#download">
-                        <img src="images/navbar/download.webp" alt="" /><span>@_localizer["download"]</span>
-                    </a>
-                </li>
+                @*                <li class="nav-item">
+                <a class="nav-link" target="_parent" href="#download">
+                <img src="images/navbar/download.webp" alt="" /><span>@_localizer["download"]</span>
+                </a>
+                </li>*@
                 <li class="nav-item">
                     <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS">
                         <img src="images/navbar/code.webp" alt="" /><span>@_localizer["code"]</span>
@@ -71,24 +71,40 @@
 <!--#endregion-->
 <section class="topBlockSection">
     <div class="container justify-content-center">
+        @*   <div class="logo-block">*@
         <img class="xactas-logo" src="images/xactas.webp" alt="" title="logo" />
         <h1>XACTAS</h1>
+        @*        </div>*@
         <h2>@_localizer["description"]</h2>
-    </div>
-</section>
-<section class="container justify-content-start">
-    <h3 class="name-block">Rider</h3>
-    <div class="row rider-block shadow-block">
-        <div class="col-3 rider-logo-block">
-            <img alt="rider" title="rider" src="images/rider.webp" />
-            <a href="https://www.jetbrains.com/ru-ru/rider/" class="btn btn-primary" style="display: block">@_localizer["download"]</a>
-        </div>
-        <div class="col-9">
-            <p>@_localizer["rider"]</p>
+        <div class="download-block row">
+            <img height="50" width="50" alt="" src="images/windows.webp" class="inline-block col" />
+            <div class="col">
+                <p>WINDOWS</p>
+                <p>2.2.1</p>
+            </div>
+            <a href="/App/DownloadWinApp" class="col"><img src="images/navbar/download.webp" /></a>
+            @*            <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>*@
         </div>
     </div>
 </section>
-<hr />
+<section class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="rider-block animation-rgb-shadow col-xl-4 row">
+            <div class="col-sm-3 rider-logo-block">
+                <img alt="rider" title="rider" src="images/rider.webp" />
+                <a href="https://www.jetbrains.com/ru-ru/rider/" class="btn btn-primary">@_localizer["download"]</a>
+            </div>
+            <div class="col-sm-9">
+                <p>@_localizer["rider"]</p>
+            </div>
+        </div>
+        <div class="col-xl-4 animation-rgb-shadow">
+            <p>@_localizer["downloadFile"]</p>
+            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" class="btn btn-primary" style="display: block">.NET 6 Runtime</a>
+            <a href="https://docs.microsoft.com/ru-RU/cpp/windows/latest-supported-vc-redist?view=msvc-160" class="btn btn-primary" style="display: block">VC 2015-2022</a>
+        </div>
+    </div>
+</section>
 <section class="container justify-content-center" id="ui">
     <h3 class="name-block">@_localizer["uiNameBlock"]</h3>
     <div class="accordion" id="accordionExample">
@@ -152,30 +168,15 @@
         </div>
     </div>
 </section>
-<hr />
-<section class="container justify-content-center" id="video">
-    <h3 class="name-block">@_localizer["video"]</h3>
-    <iframe src="https://www.youtube-nocookie.com/embed/xyG8lwxvC9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
-<hr />
-<section id="download" class="container justify-content-center">
+@*<section id="download" class="container justify-content-center">
     <h3 class="name-block">@_localizer["download"]</h3>
-    <div class="row shadow-block rider-block">
-        <div class="col-3 download-runtime-block">
-            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" class="btn btn-primary" style="display: block">.NET 6 Runtime</a>
-            <a href="https://docs.microsoft.com/ru-RU/cpp/windows/latest-supported-vc-redist?view=msvc-160" class="btn btn-primary" style="display: block">VC 2015-2022</a>
-        </div>
-        <div class="col-9">
-            <p>@_localizer["downloadFile"]</p>
-        </div>
-    </div>
     <div class="download-block">
         <img alt="" src="images/windows.webp" />
         <p>WINDOWS</p>
         <p>2.2.1</p>
         <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>
     </div>
-</section>
+</section>*@
 <!--#region Code-->
 @code {
     public void OnSelectedLanguage(string culture) =>
