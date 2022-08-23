@@ -1,4 +1,4 @@
-name: Build Windows (WPF)
+name: Build Windows
 
 on:
   push:
