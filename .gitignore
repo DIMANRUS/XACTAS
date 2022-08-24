@@ -36,7 +36,10 @@ bld/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
+#Ignore my paths
 .idea/
+.XACTAS.WPF.Installer/XACTAS.WPF.Installer-SetupFiles/
+.XACTAS.WPF.Installer/XACTAS.WPF.Installer-cache/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
