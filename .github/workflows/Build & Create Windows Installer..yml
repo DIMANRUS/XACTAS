@@ -1,0 +1,30 @@
+name: Build & Create Windows Installer
+
+on:
+  push:
+    branches: [development]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      Project_Path: XACTAS.WPF.Installer/XACTAS.WPF.Installer.aip
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build AIP
+        uses: caphyon/advinst-github-action@v1.0
+        with:
+          advinst-enable-automation: "true"
+          aip-path: ${{ env.Project_Path }}
+          aip-build-name: DefaultBuild
+          aip-package-name: XACTAS-Windows-Setup.msi
+
+      - name: Publish setup artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: setup
+          path: Installers\XACTAS-Windows-Setup.msi
