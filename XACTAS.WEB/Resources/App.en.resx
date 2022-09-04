@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="addPanelDescription" xml:space="preserve">
-    <value>The button will allow you to add a Xamarin project.Android, whose UI you can edit in Android Studio.</value>
+  <data name="addUi" xml:space="preserve">
+    <value>Adding project</value>
+  </data>
+  <data name="asUi" xml:space="preserve">
+    <value>Opening project in Android Studio</value>
   </data>
   <data name="bug" xml:space="preserve">
     <value>Bugs</value>
@@ -127,14 +130,14 @@
     <value>Source code</value>
   </data>
   <data name="copyDimanrus" xml:space="preserve">
-    <value>2022  Dmitry Sorokin | Made in Russia!</value>
+    <value>2022  Dmitry Sorokin</value>
     <comment>footer</comment>
   </data>
   <data name="copyIcons" xml:space="preserve">
     <value>Icons belong to</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>This application will allow you to edit the Xamarin project UI.Android in Android Studio. At the same time, all changes occurring in Visual Studio or Android Studio will be synchronized.</value>
+    <value>This application will allow you to create UI .NET .Android applications in Android Studio. At the same time, all changes occurring in Visual Studio or Android Studio will be synchronized.</value>
   </data>
   <data name="download" xml:space="preserve">
     <value>Download</value>
@@ -142,34 +145,52 @@
   <data name="downloadFile" xml:space="preserve">
     <value>For the application to work, you need to download .NET 6 Runtime and VC 2015-2022.</value>
   </data>
+  <data name="folderasUi" xml:space="preserve">
+    <value>Setting path for Android Studio</value>
+  </data>
+  <data name="folderUi" xml:space="preserve">
+    <value>Opening the folder project</value>
+  </data>
+  <data name="foldervsUi" xml:space="preserve">
+    <value>Setting path for Visual Studio</value>
+  </data>
   <data name="idea" xml:space="preserve">
     <value>Ideas</value>
+  </data>
+  <data name="informationUi" xml:space="preserve">
+    <value>Information about application</value>
   </data>
   <data name="language" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="optionPanelDescription" xml:space="preserve">
-    <value>In this panel, you can specify the path to your IDE. By default, the paths that were left unchanged during installation are for Visual Studio 2022 Community and Android Studio. It is also possible to change the theme and language.</value>
+  <data name="languageUi" xml:space="preserve">
+    <value>Changing language</value>
   </data>
-  <data name="projectPanelDescription" xml:space="preserve">
-    <value>First comes the name of the project, then the button, when clicked, which opens a folder with Xamarin.Android project. Then there are 3 buttons that start the file exchange process between the two IDEs (the 1st button just starts synchronization between projects, and the rest start the synchronization process itself and the Ide itself). The last button is to delete the project from the list (deletion only after the synchronization between the IDE stops)</value>
+  <data name="launchUi" xml:space="preserve">
+    <value>Starting synchronization between IDE</value>
   </data>
   <data name="rate" xml:space="preserve">
     <value>Reviews</value>
   </data>
-  <data name="rider" xml:space="preserve">
-    <value>If it is possible to use the Reader IDE, it is better to use it, since there is built-in support for the UI designer from Android Studio and more features. But there is one limitation, it is paid, but there are options for free use.</value>
+  <data name="removeUi" xml:space="preserve">
+    <value>Removing project from App</value>
   </data>
-  <data name="stopPanelDescription" xml:space="preserve">
-    <value>This panel is displayed only during the start of the file exchange process between the IDE. First comes the name of the running project, then the button to stop.</value>
+  <data name="rider" xml:space="preserve">
+    <value>To create native UI .NET Android apps can use Rider, but it is paid.</value>
+  </data>
+  <data name="stopUi" xml:space="preserve">
+    <value>Stopping synchronization between IDE</value>
   </data>
   <data name="support" xml:space="preserve">
     <value>Support</value>
   </data>
-  <data name="uiNameBlock" xml:space="preserve">
-    <value>User Interface</value>
+  <data name="themeUi" xml:space="preserve">
+    <value>Chanhing application theme</value>
   </data>
   <data name="video" xml:space="preserve">
     <value>Video</value>
+  </data>
+  <data name="vsUi" xml:space="preserve">
+    <value>Opening project in Visual Studio</value>
   </data>
 </root>

@@ -15,6 +15,3 @@
 AGPL-3.0
 
 #### [DIMANRUS](dimanrus.ru)
-
-С ❤️ из России!
-With ❤️ from Russia!

@@ -118,79 +118,79 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="addUi" xml:space="preserve">
-    <value>Добавление проекта</value>
+    <value>Proje eklemek için</value>
   </data>
   <data name="asui" xml:space="preserve">
-    <value>Открытие проекта в Android Studio</value>
+    <value>Android Studio'da proje açma</value>
   </data>
   <data name="bug" xml:space="preserve">
-    <value>Ошибки</value>
+    <value>Hata</value>
   </data>
   <data name="code" xml:space="preserve">
-    <value>Исходный код</value>
+    <value>Kaynak kodu</value>
   </data>
   <data name="copyDimanrus" xml:space="preserve">
-    <value>2022 Дмитрий Сорокин</value>
+    <value>2022 Dmitry Sorokin</value>
     <comment>footer</comment>
   </data>
   <data name="copyIcons" xml:space="preserve">
-    <value>Иконки принадлежат</value>
+    <value>Simgeler aittir</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>Данное приложение позволит вам создавать пользовательский интерфейс .NET Android приложения в Android Studio. При этом все изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.</value>
+    <value>Bu uygulama, Android Studio'da .NET Android uygulamasının kullanıcı arayüzünü oluşturmanıza olanak tanır. Bunu yaparken, Visual Studio'da veya Android Studio'da meydana gelen tüm değişiklikler eşitlenir.</value>
   </data>
   <data name="download" xml:space="preserve">
-    <value>Скачать</value>
+    <value>İndirmek</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>Если вы скачиваете не полный пакет приложения, то необходимо скачать .NET 6 Runtime и VC 2015-2022, если они у вас ещё не установлены.</value>
+    <value>Tam olmayan bir uygulama paketini indiriyorsanız, henüz yüklü değilse .NET 6 Runtime ve VC 2015-2022'yi indirmeniz gerekir.</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
-    <value>Установка пути для Android Studio</value>
+    <value>Android Studio'nun yolunu ayarlama</value>
   </data>
   <data name="folderUi" xml:space="preserve">
-    <value>Открытие папки проекта</value>
+    <value>Proje klasörünü açma</value>
   </data>
   <data name="foldervsUi" xml:space="preserve">
-    <value>Установка пути для Visual Studio</value>
+    <value>Visual Studio'nun yolunu ayarlama</value>
   </data>
   <data name="idea" xml:space="preserve">
-    <value>Идеи</value>
+    <value>Fikirler</value>
   </data>
   <data name="informationUi" xml:space="preserve">
-    <value>Информация о приложении</value>
+    <value>Uygulama bilgileri</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Язык</value>
+    <value>Dil</value>
   </data>
   <data name="languageUi" xml:space="preserve">
-    <value>Смена языка</value>
+    <value>Dil değişikliği</value>
   </data>
   <data name="launchUi" xml:space="preserve">
-    <value>Запуск синхронизации между IDE.</value>
+    <value>IDE arasında senkronizasyon başlatılıyor.</value>
   </data>
   <data name="rate" xml:space="preserve">
-    <value>Отзывы</value>
+    <value>Yorumlar</value>
   </data>
   <data name="removeUi" xml:space="preserve">
-    <value>Удаление проекта из приложения</value>
+    <value>Projeyi uygulamadan kaldırma</value>
   </data>
   <data name="rider" xml:space="preserve">
-    <value>Для создания пользовательского интерфейса нативных .NET Android приложений можно использовать Rider, но он платный.</value>
+    <value>Yerel .NET Android uygulamalarının kullanıcı arayüzünü oluşturmak için Rider'ı kullanabilirsiniz, ancak ücretlidir.</value>
   </data>
   <data name="stopUi" xml:space="preserve">
-    <value>Остановка синхронизации между IDE</value>
+    <value>IDE arasında senkronizasyonu durdurma</value>
   </data>
   <data name="support" xml:space="preserve">
-    <value>Поддержка</value>
+    <value>Destek</value>
   </data>
   <data name="themeUi" xml:space="preserve">
-    <value>Смена темы приложения</value>
+    <value>Uygulama temasını değiştirme</value>
   </data>
   <data name="video" xml:space="preserve">
-    <value>Видео</value>
+    <value>Video</value>
   </data>
   <data name="vsUi" xml:space="preserve">
-    <value>Открытие проекта в Visual Studio</value>
+    <value>Projeyi Visual Studio'da açma</value>
   </data>
 </root>

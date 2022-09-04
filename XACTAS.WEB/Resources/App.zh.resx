@@ -118,79 +118,79 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="addUi" xml:space="preserve">
-    <value>Добавление проекта</value>
+    <value>添加项目</value>
   </data>
   <data name="asui" xml:space="preserve">
-    <value>Открытие проекта в Android Studio</value>
+    <value>在Android Studio中打开项目</value>
   </data>
   <data name="bug" xml:space="preserve">
-    <value>Ошибки</value>
+    <value>错误</value>
   </data>
   <data name="code" xml:space="preserve">
-    <value>Исходный код</value>
+    <value>源代码</value>
   </data>
   <data name="copyDimanrus" xml:space="preserve">
-    <value>2022 Дмитрий Сорокин</value>
+    <value>2022德米特里*索罗金</value>
     <comment>footer</comment>
   </data>
   <data name="copyIcons" xml:space="preserve">
-    <value>Иконки принадлежат</value>
+    <value>图标属于</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>Данное приложение позволит вам создавать пользовательский интерфейс .NET Android приложения в Android Studio. При этом все изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.</value>
+    <value>此应用程序将允许您创建用户 interface .NET Android Studio 中的 Android 应用程序。 与此同时，Visual Studio 或 Android Studio 中发生的所有更改都将同步。</value>
   </data>
   <data name="download" xml:space="preserve">
-    <value>Скачать</value>
+    <value>下载</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>Если вы скачиваете не полный пакет приложения, то необходимо скачать .NET 6 Runtime и VC 2015-2022, если они у вас ещё не установлены.</value>
+    <value>如果您没有下载应用程序的完整包，那么您需要下载.NET6运行时和VC2015-2022，如果您还没有安装它们。</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
-    <value>Установка пути для Android Studio</value>
+    <value>安装Android Studio的路径</value>
   </data>
   <data name="folderUi" xml:space="preserve">
-    <value>Открытие папки проекта</value>
+    <value>打开项目文件夹</value>
   </data>
   <data name="foldervsUi" xml:space="preserve">
-    <value>Установка пути для Visual Studio</value>
+    <value>设置 Visual Studio 的路径</value>
   </data>
   <data name="idea" xml:space="preserve">
-    <value>Идеи</value>
+    <value>想法</value>
   </data>
   <data name="informationUi" xml:space="preserve">
-    <value>Информация о приложении</value>
+    <value>有关申请的资料</value>
   </data>
   <data name="language" xml:space="preserve">
-    <value>Язык</value>
+    <value>语言</value>
   </data>
   <data name="languageUi" xml:space="preserve">
-    <value>Смена языка</value>
+    <value>语言变化</value>
   </data>
   <data name="launchUi" xml:space="preserve">
-    <value>Запуск синхронизации между IDE.</value>
+    <value>启动Ide之间的同步。</value>
   </data>
   <data name="rate" xml:space="preserve">
-    <value>Отзывы</value>
+    <value>检讨报告</value>
   </data>
   <data name="removeUi" xml:space="preserve">
-    <value>Удаление проекта из приложения</value>
+    <value>从应用程序中删除项目</value>
   </data>
   <data name="rider" xml:space="preserve">
-    <value>Для создания пользовательского интерфейса нативных .NET Android приложений можно использовать Rider, но он платный.</value>
+    <value>创建本机用户 interface .NET Android 应用程序可以使用 Rider，但它是付费的。</value>
   </data>
   <data name="stopUi" xml:space="preserve">
-    <value>Остановка синхронизации между IDE</value>
+    <value>停止 Ide 之间的同步</value>
   </data>
   <data name="support" xml:space="preserve">
-    <value>Поддержка</value>
+    <value>支援服务</value>
   </data>
   <data name="themeUi" xml:space="preserve">
-    <value>Смена темы приложения</value>
+    <value>更改应用主题</value>
   </data>
   <data name="video" xml:space="preserve">
-    <value>Видео</value>
+    <value>短片</value>
   </data>
   <data name="vsUi" xml:space="preserve">
-    <value>Открытие проекта в Visual Studio</value>
+    <value>在 Visual Studio 中打开项目</value>
   </data>
 </root>

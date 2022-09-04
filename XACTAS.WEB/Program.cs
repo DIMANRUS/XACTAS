@@ -32,7 +32,7 @@ app.Run();
 
 static RequestLocalizationOptions GetLocalizerOptions()
 {
-    var supportedCultures = new[] { "ru-RU", "en-US" };
+    var supportedCultures = new[] { "ru", "en", "tr", "zh", "ar" };
     return new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
         .AddSupportedCultures(supportedCultures)
         .AddSupportedUICultures(supportedCultures);

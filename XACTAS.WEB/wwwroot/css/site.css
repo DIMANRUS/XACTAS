@@ -9,6 +9,11 @@
     margin: 8px;
 }
 
+hr {
+    color: darkorange;
+    opacity: 1;
+}
+
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
@@ -111,6 +116,7 @@ body {
 .navbar-nav > li > a > img {
     height: 20px;
     margin-right: 6px;
+    vertical-align: sub;
 }
 
 /*.navbar-brand-logo {
@@ -123,7 +129,7 @@ body {
     margin-right: 8px;
 }*/
 /*#endregion*/
-/*#region Buttons Menu*/
+/*#region Buttons Bottom Menu*/
 #buttons_menu {
     position: fixed;
     bottom: 5px;
@@ -180,6 +186,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    padding-bottom: 20px;
 }
 
     .topBlockSection h1 {
@@ -195,22 +202,6 @@ body {
         padding-bottom: 60px;
         font-size: 25px;
     }
-/*@keyframes gradient {
-    0% {
-        background-position: 0 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0 50%;
-    }
-}*/
-/*.logo-block {
-    width: 200px;
-}*/
 
 .xactas-logo {
     /*    box-shadow: 0 0 10px black;*/
@@ -218,70 +209,55 @@ body {
     height: 200px;
     margin-top: 60px;
 }
-/*#endregion*/
-/*#region UI Block*/
-.accordion {
-    margin-bottom: 50px;
-    background-color: var(--background);
+
+/*#region Download Block*/
+.download-block {
+    border-radius: 15px;
+    box-shadow: 0 0 10px white;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: fit-content;
+    background: var(--background);
 }
 
-.accordion-body {
-    background-color: var(--background);
-    font-weight: bold;
-    font-size: 19px;
-}
-
-.accordion-item {
-    background-color: var(--background);
-    box-shadow: 0 0 10px var(--color);
-}
-
-.accordion-button {
-    background-color: var(--background);
-    padding: 7px;
-    padding-left: 14px;
-}
-
-    .accordion-button > p {
-        font-family: 'Cunia';
+    .download-block > div > p {
+        font-size: 17px;
+        font-weight: bold;
         color: var(--color);
-        margin-right: 15px;
-        font-size: 30px;
     }
 
-    .accordion-button > img {
-        height: 35px;
-        margin: 3px;
+    .download-block > img, .download-block > a > img {
+        margin: 5px 10px 5px 10px;
     }
 
-    .accordion-button:not(.collapsed) {
-        background-color: var(--background);
+    .download-block > div {
+        vertical-align: top;
+        margin: 5px 0px;
     }
 /*#endregion*/
-/*#region Video Block*/
-iframe {
-    border-radius: 30px;
-    box-shadow: 0 0 10px var(--color);
-    width: 60%;
-    height: 400px;
-    margin-bottom: 20px;
-}
+/*#endregion*/
+/*#region Carousel Galary*/
+/*.carousel {
+    width: 50%;
+    margin: 0 auto;
+    height: fit-content;
+}*/
 /*#endregion*/
 /*#region Rider*/
-.rider-logo-block > img {
-    width: 110px;
-    margin: 5px;
-}
 
-.rider-logo-block > a {
+/*.rider-logo-block > a {
     width: 100px;
-}
+}*/
 
-.rider-block {
+.corner-block {
     margin: 20px;
+    box-shadow: 0 0 10px var(--color);
+    border-radius: 10px;
+    width: 400px;
+    vertical-align: sub;
 }
 
-    .rider-block > div > p {
+    .corner-block > div > p, .corner-block > p {
         margin: 10px;
         margin-left: 20px;
         font-weight: bold;
@@ -289,107 +265,39 @@ iframe {
         color: var(--color);
     }
 /*#endregion*/
-/*#region Download Block*/
-.download-block {
-    border-radius: 15px;
-    box-shadow: 0 0 10px var(--color);
-    margin: 0 auto;
-    margin-bottom: 30px;
-    width: fit-content;
-    padding: 5px 40px 10px 40px;
-}
-
-    .download-block > p {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .download-block > p {
-        font-weight: bold;
-    }
-/*#endregion*/
 /*#region Footer*/
-.footer {
+/*.footer {
     text-align: center;
+}*/
+
+.footer h3 {
+    font-size: 20px;
+    letter-spacing: 20px;
+    font-weight: bold;
+    /*        margin: 5px;*/
+    /*      font-family: 'Cunia';*/
 }
 
-    .footer h3 {
-        font-size: 20px;
-        letter-spacing: 15px;
-        margin: 20px;
-        font-family: 'Cunia';
-    }
-
-.iconsupport img {
+/*.iconsupport img {
     height: 35px;
     margin-top: 10px;
-}
+}*/
 
 .copyright {
-    padding: 10px;
+    margin: 15px;
 }
 /*#endregion*/
-/*#region Animation RGB Shadow */
-.animation-rgb-shadow {
-    position: relative;
-    background: var(--background);
-    color: #fff;
-}
-
-    .animation-rgb-shadow:after, .animation-rgb-shadow:before {
-        content: ' ';
-        position: absolute;
-        top: -3px;
-        left: -3px;
-        width: calc(100% + 6px);
-        height: calc(100% + 6px);
-        background: linear-gradient(45deg, red, yellow,green, blue, yellow, purple);
-        z-index: -1;
-        background-size: 400%;
-        animation: borderrgb 40s linear infinite;
-    }
-
-    .animation-rgb-shadow:after {
-        filter: blur(20px);
-    }
-
-@keyframes borderrgb {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
-
-
-/*#endregion */
 /*#region Style for Other Devices*/
 @media screen and (max-width: 1200px) {
-    /*    iframe {
-        width: 85%;
-        height: 280px;
-    }*/
-
-    /*    .rider-block > div > p {
-        margin: 5px;
-    }*/
-    /*    body {
-        text-align: center;
-    }*/
     .rider-block {
         padding: 20px;
     }
 }
 /*#endregion*/
 /*#region Shared*/
-.shadow {
+.shadow-corner {
     box-shadow: 0 0 10px var(--color);
+    border-radius: 10px;
 }
 
 .block {
@@ -400,4 +308,33 @@ iframe {
     display: inline-block;
     float: left;
 }
+/*#endregion*/
+/*#region Ui Block*/
+.ui-block {
+    margin: 10px;
+    padding: 3px 20px;
+}
+
+    .ui-block > p {
+        /*     font-family: 'Cunia';*/
+        font-weight: bold;
+        margin-right: 10px;
+        font-size: 21px;
+    }
+
+    .ui-block > span > img {
+        height: 40px;
+        cursor: pointer;
+    }
+/*#region Popover*/
+.popover {
+    background-color: var(--background);
+    box-shadow: 0 0 10px var(--color);
+}
+
+.popover-body {
+    color: var(--color);
+    padding: 5px 10px;
+}
+/*#endregion*/
 /*#endregion*/

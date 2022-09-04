@@ -127,11 +127,9 @@ public partial class MainWindow
         string rootFolderProject = Path.GetDirectoryName(_openFileDialog.FileName);
         if (_projects.FirstOrDefault(x => x.VsProjectPath == rootFolderProject) == null)
         {
-            if (File.Exists(rootFolderProject + @"\Properties\AndroidManifest.xml"))
+            if (File.Exists(rootFolderProject + @"\Properties\AndroidManifest.xml") || File.Exists(rootFolderProject + @"\AndroidManifest.xml"))
             {
-                var array = _openFileDialog.FileName.Split(@"\");
-                array[^1] = "";
-                await AddProject(Path.Combine(array));
+                await AddProject(Path.Combine(Path.GetDirectoryName(_openFileDialog.FileName)));
             }
             else
             {
@@ -148,6 +146,7 @@ public partial class MainWindow
     {
         Process.Start("explorer.exe", ((FrameworkElement)sender).Tag.ToString()!);
     }
+
     private async void Launch_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         if (StopBlock.Visibility != Visibility.Collapsed || !await LaunchWatcher((Image)sender))
