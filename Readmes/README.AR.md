@@ -3,22 +3,22 @@
 
 ![](https://visitor-badge.glitch.me/badge?page_id=dimanrus.xactas)
 
-<div dit="rtl">
-#### هذا التطبيق سوف يسمح لك لإنشاء مستخدم interface .NET تطبيقات الروبوت في الروبوت ستوديو. في الوقت نفسه ، سيتم مزامنة التغييرات التي تحدث في فيسوال ستوديو أو أندرويد ستوديو.
+ ## هذا التطبيق سوف يسمح لك لإنشاء مستخدم interface .NET تطبيقات الروبوت في الروبوت ستوديو. في الوقت نفسه ، سيتم مزامنة التغييرات التي تحدث في فيسوال ستوديو أو   أندرويد ستوديو.
 
-<div dit="rtl">
 ## لغات أخرى
 
 [Русский](https://github.com/DIMANRUS/XACTAS/blob/main/README.md) | [Türk](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.TR.md) | [English](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.EN.md) | [中文](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.ZH.md)
 
-<div dit="rtl">
-## كومة التكنولوجيا
-- .NET 6
+ ## كومة التكنولوجيا
+<div dir="rtl">
+- NET 6
+<div dir="rtl">
 - WPF
+<div dir="rtl">
 - ASP.NET Core
 
-<div dit="rtl">
-## الترخيص
+ ## الترخيص
+<div dir="rtl">
 AGPL-3.0
 
 #### [DIMANRUS](dimanrus.ru)
