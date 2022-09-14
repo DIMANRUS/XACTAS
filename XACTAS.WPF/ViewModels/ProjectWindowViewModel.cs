@@ -7,14 +7,8 @@ public class ProjectWinowViewModel : INotifyPropertyChanged
     {
         BackgroundBrush.Color = Settings.Default.IsDarkTheme ? Colors.Black : Colors.White;
         ForegroundBrush.Color = Settings.Default.IsDarkTheme ? Colors.White : Colors.Black;
-        ImageSourceCurrentLanguage = Settings.Default.Language switch
-        {
-            "ar" => new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/AR.png")),
-            "tr" => new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/TR.png")),
-            "zh" => new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/ZH.png")),
-            "en" => new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/EN.png")),
-            _ => new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/RU.png"))
-        };
+        ImageSourceCurrentLanguage = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/{Settings.Default.Language}.png"));
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
         #region Инициализация комманд
         ChangeTheme = new RelayCommand(() =>
@@ -31,34 +25,34 @@ public class ProjectWinowViewModel : INotifyPropertyChanged
         {
             switch (Settings.Default.Language)
             {
-                case "ru":
-                    Settings.Default.Language = "en";
+                case "ru-RU":
+                    Settings.Default.Language = "en-US";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
-                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/EN.png"));
+                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/en-US.png"));
                     break;
-                case "en":
-                    Settings.Default.Language = "ar";
+                case "en-US":
+                    Settings.Default.Language = "ar-EG";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("ar-EG");
-                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/AR.png"));
+                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/ar-EG.png"));
                     break;
-                case "ar":
-                    Settings.Default.Language = "tr";
+                case "ar-EG":
+                    Settings.Default.Language = "tr-TR";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("tr-TR");
-                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/TR.png"));
+                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/tr-TR.png"));
                     break;
-                case "tr":
-                    Settings.Default.Language = "zh";
+                case "tr-TR":
+                    Settings.Default.Language = "zh-CN";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("zh-CN");
-                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/ZH.png"));
+                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/zh-CN.png"));
                     break;
-                case "zh":
-                    Settings.Default.Language = "ru";
+                case "zh-CN":
+                    Settings.Default.Language = "ru-RU";
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
-                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/RU.png"));
+                    ImageSourceCurrentLanguage = new BitmapImage(new Uri("pack://application:,,,/Assets/Icons/Languages/ru-RU.png"));
                     break;
             }
-            NotifyPropertyChanged(nameof(ImageSourceCurrentLanguage));
             Settings.Default.Save();
+            NotifyPropertyChanged(nameof(ImageSourceCurrentLanguage));
         });
         #endregion
     }
