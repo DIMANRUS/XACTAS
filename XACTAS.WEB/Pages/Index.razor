@@ -2,10 +2,9 @@
 @using Microsoft.Extensions.Localization
 @inject NavigationManager _navigationManager
 @inject IStringLocalizer<App> _localizer
-@inject IJSRuntime JS;
 
 <!--#region Navigation Bar-->
-<nav class="navbar shadow navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top">
     <div class="container" id="home">
         <a class="navbar-brand" href="#">
             XACTAS
@@ -16,8 +15,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="https://www.youtube.com/watch?v=xyG8lwxvC9s">
+                    <a class="nav-link" href="#ui" target="_parent"><img src="images/navbar/ui.webp" alt="" />UI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="#video">
                         <img src="images/navbar/video.webp" alt="" />@_localizer["video"]
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_parent" href="#download">
+                        <img src="images/navbar/download.webp" alt="" /><span>@_localizer["download"]</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -46,28 +53,13 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("en"))">
-                                <img src="images/languages/usa.webp" alt="" /><span>English</span>
+                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("en-US"))">
+                                <img src="images/languages/falcon.webp" alt="" /><span>English</span>
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ru"))">
-                                <img src="images/languages/russia.webp" alt="" /><span>Русский</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("zh"))">
-                                <img src="images/languages/china.webp" alt="" /><span>中文</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("tr"))">
-                                <img src="images/languages/turlish.webp" alt="" /><span>Türkçe</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ar"))">
-                                <img src="images/languages/arabic.webp" alt="" /><span>العربية</span>
+                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ru-RU"))">
+                                <img src="images/languages/kremlin.webp" alt="" /><span>Русский</span>
                             </a>
                         </li>
                     </ul>
@@ -79,118 +71,114 @@
 <!--#endregion-->
 <section class="topBlockSection">
     <div class="container justify-content-center">
-        @*   <div class="logo-block">*@
         <img class="xactas-logo" src="images/xactas.webp" alt="" title="logo" />
         <h1>XACTAS</h1>
-        @*        </div>*@
         <h2>@_localizer["description"]</h2>
-        <div class="download-block">
-            <img class="d-inline-block" height="50" width="50" alt="" src="images/windows.webp" />
-            <div class="d-inline-block">
-                <p>WINDOWS</p>
-                <p>2.3.0</p>
-            </div>
-            <a href="/App/DownloadWinApp" class="d-inline-block"><img src="images/navbar/download.webp" /></a>
-            @*            <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>*@
-        </div>
     </div>
 </section>
-<section class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="corner-block col-xl-4">
-            <p>@_localizer["rider"]</p>
+<section class="container justify-content-start">
+    <h3 class="name-block">Rider</h3>
+    <div class="row rider-block shadow-block">
+        <div class="col-3 rider-logo-block">
+            <img alt="rider" title="rider" src="images/rider.webp" />
             <a href="https://www.jetbrains.com/ru-ru/rider/" class="btn btn-primary" style="display: block">@_localizer["download"]</a>
         </div>
-        <div class="corner-block col-xl-4">
-            <p>@_localizer["downloadFile"]</p>
-            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" class="btn btn-primary d-inline-block">.NET 6 Runtime</a>
-            <a href="https://docs.microsoft.com/ru-RU/cpp/windows/latest-supported-vc-redist?view=msvc-160" class="btn btn-primary d-inline-block">VC 2015-2022</a>
+        <div class="col-9">
+            <p>@_localizer["rider"]</p>
         </div>
     </div>
 </section>
+<hr />
 <section class="container justify-content-center" id="ui">
-    <div class="d-inline-block shadow-corner ui-block">
-        <p class="d-inline-block">App</p>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["folderUi"]">
-            <img alt="" src="images/uiApp/folder.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["launchUi"]">
-            <img alt="" src="images/uiApp/launch.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["vsUi"]">
-            <img alt="" src="images/uiApp/vs.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["asUi"]">
-            <img alt="" src="images/uiApp/android-studio.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["removeUi"]">
-            <img alt="" src="images/uiApp/remove.webp" />
-        </span>
-    </div>
-    <div class="d-inline-block shadow-corner ui-block">
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["foldervsUi"]">
-            <img alt="" title="" src="images/uiapp/foldervs.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["folderasUi"]">
-            <img alt="" title="" src="images/uiapp/folderas.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["languageUi"]">
-            <img alt="" title="" src="images/uiapp/ru.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["themeUi"]">
-            <img alt="" title="" src="images/uiapp/brush.webp" />
-        </span>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["informationUi"]">
-            <img alt="" title="" src="images/uiapp/help.webp" />
-        </span>
-    </div>
-    <div class="d-inline-block shadow-corner ui-block">
-        <p class="d-inline-block">App</p>
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["stopUi"]">
-            <img alt="" src="images/uiapp/stop.webp" />
-        </span>
-    </div>
-    <div class="d-inline-block shadow-corner ui-block">
-        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="click hover focus" data-bs-content="@_localizer["addUi"]">
-            <img alt="" title="" src="images/uiapp/add.webp" />
-        </span>
+    <h3 class="name-block">@_localizer["uiNameBlock"]</h3>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <p>App</p>
+                    <img alt="" src="images/uiApp/folder.webp" />
+                    <img alt="" src="images/uiApp/launch.webp" />
+                    <img alt="" src="images/uiApp/vs.webp" />
+                    <img alt="" src="images/uiApp/android-studio.webp" />
+                    <img alt="" src="images/uiApp/remove.webp" />
+                </button>
+            </p>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["projectPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <img alt="" title="" src="images/uiApp/FolderVS.webp" />
+                    <img alt="" title="" src="images/uiApp/FolderAS.webp" />
+                    <img alt="" title="" src="images/uiApp/RU.webp" />
+                    <img alt="" title="" src="images/uiApp/brush.webp" />
+                    <img alt="" title="" src="images/uiApp/help.webp" />
+                </button>
+            </p>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["optionPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <p>App</p>
+                    <img alt="" src="images/uiApp/stop.webp" />
+                </button>
+            </p>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["stopPanelDescription"]
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <p class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                    <img alt="" title="" src="images/uiApp/add.webp" />
+                </button>
+            </p>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    @_localizer["addPanelDescription"]
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-@*<section class="container justify-content-center">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<hr />
+<section class="container justify-content-center" id="video">
+    <h3 class="name-block">@_localizer["video"]</h3>
+    <iframe src="https://www.youtube-nocookie.com/embed/xyG8lwxvC9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<hr />
+<section id="download" class="container justify-content-center">
+    <h3 class="name-block">@_localizer["download"]</h3>
+    <div class="row shadow-block rider-block">
+        <div class="col-3 download-runtime-block">
+            <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0" class="btn btn-primary" style="display: block">.NET 6 Runtime</a>
+            <a href="https://docs.microsoft.com/ru-RU/cpp/windows/latest-supported-vc-redist?view=msvc-160" class="btn btn-primary" style="display: block">VC 2015-2022</a>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
+        <div class="col-9">
+            <p>@_localizer["downloadFile"]</p>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-</section>*@
+    <div class="download-block">
+        <img alt="" src="images/windows.webp" />
+        <p>WINDOWS</p>
+        <p>2.2.1</p>
+        <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>
+    </div>
+</section>
+<!--#region Code-->
 @code {
     public void OnSelectedLanguage(string culture) =>
         _navigationManager.NavigateTo($"/Culture/SetCulture?culture={Uri.EscapeDataString(culture)}", true);
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-            await JS.InvokeVoidAsync("popoverInit");
-    }
 }
+<!--#endregion-->

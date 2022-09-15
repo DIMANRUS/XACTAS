@@ -1,22 +1,20 @@
 # XACTAS
+![alt text](https://xactas.dimanrus.ru/images/xactas.png)
 
-![](https://xactas.dimanrus.ru/images/Xactas.png)
+#### [RU] Данное приложение позволит вам редактировать UI проекта Xamarin.Android в Android Studio. При этом все изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.
+#### [EN] This application will allow you to edit the Xamarin project UI.Android in Android Studio. At the same time, all changes occurring in Visual Studio or Android Studio will be synchronized.
 
-![](https://visitor-badge.glitch.me/badge?page_id=dimanrus.xactas)
-
-#### Данное приложение позволит вам создавать пользовательский интерфейс .NET Android приложений в Android Studio. При этом изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.
-
-## Другие языки
-
-[Türk](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.TR.md) | [English](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.EN.md) | [中文](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.ZH.md) | [العربية](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.AR.md)
-
-## Стек технологий
+## Technology stack
 - .NET 6
 - WPF
-- ASP.NET Core
+- ASP.NET Core (Web Site)
 
-## Лицензия
+#### [XACTAS Official Site](https://xactas.dimanrus.ru/)
+
+## License
 AGPL-3.0
 
 #### [DIMANRUS](dimanrus.ru)
-#### [XACTAS Сайт](https://xactas.dimanrus.ru/)
+
+С ❤️ из России!
+With ❤️ from Russia!

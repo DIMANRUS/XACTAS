@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="addUi" xml:space="preserve">
-    <value>Добавление проекта</value>
-  </data>
-  <data name="asui" xml:space="preserve">
-    <value>Открытие проекта в Android Studio</value>
+  <data name="addPanelDescription" xml:space="preserve">
+    <value>Кнопка позволит вам добавить проект Xamarin.Android, UI которого вы сможете редактировать в Android Studio.</value>
   </data>
   <data name="bug" xml:space="preserve">
     <value>Ошибки</value>
@@ -130,67 +127,49 @@
     <value>Исходный код</value>
   </data>
   <data name="copyDimanrus" xml:space="preserve">
-    <value>2022 Дмитрий Сорокин</value>
+    <value>2022 Дмитрий Сорокин | Сделано в России!</value>
     <comment>footer</comment>
   </data>
   <data name="copyIcons" xml:space="preserve">
-    <value>Иконки принадлежат</value>
+    <value>Иконки принаждежат</value>
   </data>
   <data name="description" xml:space="preserve">
-    <value>Данное приложение позволит вам создавать пользовательский интерфейс .NET Android приложения в Android Studio. При этом все изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.</value>
+    <value>Данное приложение позволит вам редактировать UI проекта Xamarin.Android в Android Studio. При этом все изменения происходящие в Visual Studio или Android Studio будут синхронизироваться.</value>
   </data>
   <data name="download" xml:space="preserve">
     <value>Скачать</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>Для работоспособности приложения необходимо скачать .NET 6 Runtime и VS 2015-2022, если у вас они ещё не установлены.</value>
-  </data>
-  <data name="folderasUi" xml:space="preserve">
-    <value>Установка пути для Android Studio</value>
-  </data>
-  <data name="folderUi" xml:space="preserve">
-    <value>Открытие папки проекта</value>
-  </data>
-  <data name="foldervsUi" xml:space="preserve">
-    <value>Установка пути для Visual Studio</value>
+    <value>Для работоспособности приложения, необходимо скачать .NET 6 Runtime и VC 2015-2022.</value>
   </data>
   <data name="idea" xml:space="preserve">
     <value>Идеи</value>
   </data>
-  <data name="informationUi" xml:space="preserve">
-    <value>Информация о приложении</value>
-  </data>
   <data name="language" xml:space="preserve">
     <value>Язык</value>
   </data>
-  <data name="languageUi" xml:space="preserve">
-    <value>Смена языка</value>
+  <data name="optionPanelDescription" xml:space="preserve">
+    <value>В данной панели вы сможете указать путь к своим IDE. По умолчанию пути, которые стояли при установке без изменения, для Visual Studio 2022 Community и Android Stduio. Также есть возможность поменять тему и язык.</value>
   </data>
-  <data name="launchUi" xml:space="preserve">
-    <value>Запуск синхронизации между IDE.</value>
+  <data name="projectPanelDescription" xml:space="preserve">
+    <value>Сначала идёт название проекта, после кнопка, при нажатии на которую откроется папка с Xamarin.Android проектом. Затем располагаются 3 кнопки, которые запускают процесс обмена файлами между двумя IDE (1-ая кнопка запускает просто синхронизацию между проектами, а остальные запускают сам процесс синхронизации и саму Ide). Последняя кнопка удалит проект из списка (удаление только после остановки синхронизации между IDE)</value>
   </data>
   <data name="rate" xml:space="preserve">
     <value>Отзывы</value>
   </data>
-  <data name="removeUi" xml:space="preserve">
-    <value>Удаление проекта из приложения</value>
-  </data>
   <data name="rider" xml:space="preserve">
-    <value>Для создания пользовательского интерфейса нативных .NET Android приложений можно использовать Rider, но он платный.</value>
+    <value>Если есть возможность использовать Rider IDE, то лучше использовать его, так как там есть встроенная поддержка UI конструктора из Android Studio и больше возможностей. Но есть одно ограничение, он платный, но есть варианты и для бесплатного использования.</value>
   </data>
-  <data name="stopUi" xml:space="preserve">
-    <value>Остановка синхронизации между IDE</value>
+  <data name="stopPanelDescription" xml:space="preserve">
+    <value>Данная панель отображена только во время запуска процесса обмена файлами между IDE. Сначала идёт название запущенного проекта, затем кнопка для отсановки.</value>
   </data>
   <data name="support" xml:space="preserve">
     <value>Поддержка</value>
   </data>
-  <data name="themeUi" xml:space="preserve">
-    <value>Смена темы приложения</value>
+  <data name="uiNameBlock" xml:space="preserve">
+    <value>Интерфейс программы</value>
   </data>
   <data name="video" xml:space="preserve">
     <value>Видео</value>
-  </data>
-  <data name="vsUi" xml:space="preserve">
-    <value>Открытие проекта в Visual Studio</value>
   </data>
 </root>

@@ -12,9 +12,9 @@
     <PackageProjectUrl>dimanrus.ru</PackageProjectUrl>
     <AssemblyName>XACTAS</AssemblyName>
     <PackageIcon>xactas.png</PackageIcon>
-    <AssemblyVersion>2.3.0</AssemblyVersion>
-    <FileVersion>2.3.0</FileVersion>
-    <Version>2.3.0</Version>
+    <AssemblyVersion>2.2.1</AssemblyVersion>
+    <FileVersion>2.2.1</FileVersion>
+    <Version>2.2.1</Version>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>DIMANRUS.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>true</DelaySign>
@@ -41,11 +41,8 @@
     <None Remove="Assets\Icons\FolderAndroidStudio.png" />
     <None Remove="Assets\Icons\FolderVisualStudio.png" />
     <None Remove="Assets\Icons\help.png" />
-    <None Remove="Assets\Icons\Languages\ar-EG.png" />
-    <None Remove="Assets\Icons\Languages\en-US.png" />
-    <None Remove="Assets\Icons\Languages\ru-RU.png" />
-    <None Remove="Assets\Icons\Languages\tr-TR.png" />
-    <None Remove="Assets\Icons\Languages\zh-CN.png" />
+    <None Remove="Assets\Icons\Languages\en.png" />
+    <None Remove="Assets\Icons\Languages\ru.png" />
     <None Remove="Assets\Icons\launch.png" />
     <None Remove="Assets\Icons\remove.png" />
     <None Remove="Assets\Icons\stop.png" />
@@ -73,11 +70,8 @@
     <Resource Include="Assets\Icons\FolderAndroidStudio.png" />
     <Resource Include="Assets\Icons\FolderVisualStudio.png" />
     <Resource Include="Assets\Icons\Help.png" />
-    <Resource Include="Assets\Icons\Languages\ar-EG.png" />
-    <Resource Include="Assets\Icons\Languages\en-US.png" />
-    <Resource Include="Assets\Icons\Languages\ru-RU.png" />
-    <Resource Include="Assets\Icons\Languages\tr-TR.png" />
-    <Resource Include="Assets\Icons\Languages\zh-CN.png" />
+    <Resource Include="Assets\Icons\Languages\EN.png" />
+    <Resource Include="Assets\Icons\Languages\RU.png" />
     <Resource Include="Assets\Icons\Launch.png" />
     <Resource Include="Assets\Icons\Remove.png" />
     <Resource Include="Assets\Icons\Stop.png" />
@@ -89,36 +83,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources - Copy %282%29 - Copy.ru-RU.Designer.cs">
-      <DependentUpon>Resources.ar-EG.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources - Copy %282%29.ru-RU.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources - Copy %283%29.ru-RU.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources - Copy - Copy %282%29.ru-RU.Designer.cs">
-      <DependentUpon>Resources.ar-EG.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources - Copy - Copy.ru-RU.Designer.cs">
-      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Properties\Resources - Copy.ru-RU.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -132,18 +96,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.ar-EG.resx">
-      <LastGenOutput>Resources - Copy (3).ru-RU.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.zh-CN.resx">
-      <LastGenOutput>Resources - Copy (2).ru-RU.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Properties\Resources.tr-TR.resx">
-      <LastGenOutput>Resources - Copy.ru-RU.Designer.cs</LastGenOutput>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.en-US.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
     </EmbeddedResource>

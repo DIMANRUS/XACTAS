@@ -3,15 +3,11 @@
     src: url('../css/fonts/cunia.ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 .btn {
     margin: 8px;
-}
-
-hr {
-    color: darkorange;
-    opacity: 1;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -30,7 +26,6 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    font-display: swap;
 }
 
 .name-block {
@@ -39,21 +34,17 @@ body {
     color: var(--color);
 }
 
-.row {
-    --bs-gutter-x: 0px;
-}
-
 .container-fluid {
     padding: 0;
 }
 
-/*hr {
+hr {
     margin: 0 35%;
     background-color: darkorange;
     opacity: 1;
     border-radius: 4px;
 }
-*/
+
 :root {
     --background: black;
     --color: white;
@@ -84,14 +75,15 @@ body {
     color: var(--color);
     font-size: 26px;
 }
-/*
+
     .navbar-brand > img {
         margin-right: 8px;
-    }*/
+    }
 
 .navbar {
     padding: 0;
     -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px var(--color);
     backdrop-filter: blur(20px);
     background-color: rgba(255,255,255,.3);
 }
@@ -102,12 +94,12 @@ body {
 }
 
     .nav-link:hover, .navbar-brand:hover {
-        color: blueviolet;
+        color: orange;
     }
 
-/*.navbar-toggler {
+.navbar-toggler {
     border-color: var(--color);
-}*/
+}
 
 .navbar-toggler-icon {
     background-image: var(--toggler_style);
@@ -116,20 +108,19 @@ body {
 .navbar-nav > li > a > img {
     height: 20px;
     margin-right: 6px;
-    vertical-align: sub;
 }
 
-/*.navbar-brand-logo {
+.navbar-brand-logo {
     box-shadow: 0 0 10px var(--color);
     background-color: var(--background);
     border-radius: 5px;
 }
-*/
-/*.nav-item {
+
+.nav-item {
     margin-right: 8px;
-}*/
+}
 /*#endregion*/
-/*#region Buttons Bottom Menu*/
+/*#region Buttons Menu*/
 #buttons_menu {
     position: fixed;
     bottom: 5px;
@@ -177,164 +168,165 @@ body {
 /*#endregion*/
 /*#region Top Block Section*/
 .topBlockSection {
-    /*  background: linear-gradient(-45deg, #7acf00, #00a2ff);*/
-    /* background-size: 400% 400%;*/
-    /*    animation: gradient 5s ease infinite;*/
+    background: linear-gradient(-45deg, #7acf00, #00a2ff);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
     padding-top: 50px;
-    background-image: url('../images/back.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    padding-bottom: 20px;
 }
 
-    .topBlockSection h1 {
-        font-family: 'Cunia';
-        color: white;
-        text-align: center;
-        font-size: 40px;
-        margin: 10px;
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
     }
 
-    .topBlockSection h2 {
-        color: white;
-        padding-bottom: 60px;
-        font-size: 25px;
+    50% {
+        background-position: 100% 50%;
     }
+
+    100% {
+        background-position: 0 50%;
+    }
+}
 
 .xactas-logo {
-    /*    box-shadow: 0 0 10px black;*/
+    box-shadow: 0 0 10px black;
     border-radius: 25px;
-    height: 200px;
-    margin-top: 60px;
+    height: 250px;
+    margin-top: 40px;
 }
 
-/*#region Download Block*/
-.download-block {
-    border-radius: 15px;
-    box-shadow: 0 0 10px white;
-    margin: 0 auto;
-    margin-bottom: 30px;
-    width: fit-content;
-    background: var(--background);
-}
-
-    .download-block > div > p {
-        font-size: 17px;
-        font-weight: bold;
-        color: var(--color);
-    }
-
-    .download-block > img, .download-block > a > img {
-        margin: 5px 10px 5px 10px;
-    }
-
-    .download-block > div {
-        vertical-align: top;
-        margin: 5px 0px;
-    }
-/*#endregion*/
-/*#endregion*/
-/*#region Carousel Galary*/
-/*.carousel {
-    width: 50%;
-    margin: 0 auto;
-    height: fit-content;
-}*/
-/*#endregion*/
-/*#region Rider*/
-
-/*.rider-logo-block > a {
-    width: 100px;
-}*/
-
-.corner-block {
-    margin: 20px;
-    box-shadow: 0 0 10px var(--color);
-    border-radius: 10px;
-    width: 400px;
-    vertical-align: sub;
-}
-
-    .corner-block > div > p, .corner-block > p {
-        margin: 10px;
-        margin-left: 20px;
-        font-weight: bold;
-        font-size: 15px;
-        color: var(--color);
-    }
-/*#endregion*/
-/*#region Footer*/
-/*.footer {
-    text-align: center;
-}*/
-
-.footer h3 {
-    font-size: 20px;
-    letter-spacing: 20px;
-    font-weight: bold;
-    /*        margin: 5px;*/
-    /*      font-family: 'Cunia';*/
-}
-
-/*.iconsupport img {
-    height: 35px;
-    margin-top: 10px;
-}*/
-
-.copyright {
+.topBlockSection h1 {
+    font-family: 'Cunia';
+    color: white;
+    font-size: 50px;
     margin: 15px;
 }
-/*#endregion*/
-/*#region Style for Other Devices*/
-@media screen and (max-width: 1200px) {
-    .rider-block {
-        padding: 20px;
-    }
+
+.topBlockSection h2 {
+    color: white;
+    padding-bottom: 60px;
 }
 /*#endregion*/
-/*#region Shared*/
-.shadow-corner {
-    box-shadow: 0 0 10px var(--color);
-    border-radius: 10px;
+/*#region UI Block*/
+.accordion {
+    margin-bottom: 50px;
+    background-color: var(--background);
 }
 
-.block {
-    display: block;
+.accordion-body {
+    background-color: var(--background);
+    font-weight: bold;
+    font-size: 19px;
 }
 
-.inline-block {
-    display: inline-block;
-    float: left;
-}
-/*#endregion*/
-/*#region Ui Block*/
-.ui-block {
-    margin: 10px;
-    padding: 3px 20px;
-}
-
-    .ui-block > p {
-        /*     font-family: 'Cunia';*/
-        font-weight: bold;
-        margin-right: 10px;
-        font-size: 21px;
-    }
-
-    .ui-block > span > img {
-        height: 40px;
-        cursor: pointer;
-    }
-/*#region Popover*/
-.popover {
+.accordion-item {
     background-color: var(--background);
     box-shadow: 0 0 10px var(--color);
 }
 
-.popover-body {
-    color: var(--color);
-    padding: 5px 10px;
+.accordion-button {
+    background-color: var(--background);
+    padding: 7px;
+    padding-left: 14px;
+}
+
+    .accordion-button > p {
+        font-family: 'Cunia';
+        color: var(--color);
+        margin-right: 15px;
+        font-size: 30px;
+    }
+
+    .accordion-button > img {
+        height: 35px;
+        margin: 3px;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--background);
+    }
+/*#endregion*/
+/*#region Video Block*/
+iframe {
+    border-radius: 30px;
+    box-shadow: 0 0 10px var(--color);
+    width: 60%;
+    height: 400px;
+    margin-bottom: 20px;
 }
 /*#endregion*/
+/*#region Rider*/
+.rider-logo-block > img {
+    width: 140px;
+    margin: 5px;
+}
+
+.rider-block {
+    border-radius: 10px;
+    margin: 10px;
+    margin-bottom: 50px;
+}
+
+    .rider-block > div > p {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+/*#endregion*/
+/*#region Download Block*/
+.download-block {
+    border-radius: 15px;
+    box-shadow: 0 0 10px var(--color);
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: fit-content;
+    padding: 5px 40px 10px 40px;
+}
+
+    .download-block > p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .download-block > p {
+        font-weight: bold;
+    }
+/*#endregion*/
+/*#region Footer*/
+.footer {
+    text-align: center;
+}
+
+    .footer h3 {
+        font-size: 20px;
+        letter-spacing: 15px;
+        margin: 20px;
+        font-family: 'Cunia';
+    }
+
+.iconsupport img {
+    height: 35px;
+    margin-top: 10px;
+}
+
+.copyright {
+    padding: 10px;
+}
+/*#endregion*/
+/*#region Style for Other Devices*/
+@media screen and (max-width: 1280px) {
+    iframe {
+        width: 85%;
+        height: 280px;
+    }
+
+    .rider-block > div > p {
+        margin: 5px;
+    }
+}
+/*#endregion*/
+/*#region Shared*/
+.shadow-block {
+    box-shadow: 0 0 10px var(--color);
+}
 /*#endregion*/
