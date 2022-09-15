@@ -143,7 +143,7 @@
     <value>Download</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>For the application to work, you need to download .NET 6 Runtime and VC 2015-2022.</value>
+    <value>For the application to work , you need to download .NET 6 Runtime and VS 2015-2022, if you don't have them installed yet.</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
     <value>Setting path for Android Studio</value>

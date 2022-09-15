@@ -143,7 +143,7 @@
     <value>Скачать</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>Если вы скачиваете не полный пакет приложения, то необходимо скачать .NET 6 Runtime и VC 2015-2022, если они у вас ещё не установлены.</value>
+    <value>Для работоспособности приложения необходимо скачать .NET 6 Runtime и VS 2015-2022, если у вас они ещё не установлены.</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
     <value>Установка пути для Android Studio</value>

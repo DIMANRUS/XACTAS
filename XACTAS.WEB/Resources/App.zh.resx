@@ -143,7 +143,7 @@
     <value>下载</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>如果您没有下载应用程序的完整包，那么您需要下载.NET6运行时和VC2015-2022，如果您还没有安装它们。</value>
+    <value>对于应用程序的工作，.NET 6 运行时和VS2015-2022，如果你还没有安装它们。</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
     <value>安装Android Studio的路径</value>

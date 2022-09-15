@@ -143,7 +143,7 @@
     <value>İndirmek</value>
   </data>
   <data name="downloadFile" xml:space="preserve">
-    <value>Tam olmayan bir uygulama paketini indiriyorsanız, henüz yüklü değilse .NET 6 Runtime ve VC 2015-2022'yi indirmeniz gerekir.</value>
+    <value>Uygulamanın çalışması için, henüz yüklü değilse .NET 6 Runtime ve VS 2015-2022'yi indirmeniz gerekir.</value>
   </data>
   <data name="folderasUi" xml:space="preserve">
     <value>Android Studio'nun yolunu ayarlama</value>

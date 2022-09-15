@@ -5,9 +5,9 @@ public class AppController : ControllerBase
 {
     public async Task<IActionResult> DownloadWinApp()
     {
-        return new FileContentResult(await System.IO.File.ReadAllBytesAsync("Files/XACTAS.msi"), "application/octeat-stream")
+        return new FileContentResult(await System.IO.File.ReadAllBytesAsync("Files/XACTAS Setup.exe"), "application/octeat-stream")
         {
-            FileDownloadName = "XACTAS Setup.msi"
+            FileDownloadName = "XACTAS Setup.exe"
         };
     }
 }
