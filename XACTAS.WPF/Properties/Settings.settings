@@ -12,7 +12,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
-      <Value Profile="(Default)">ru</Value>
+      <Value Profile="(Default)">ru-RU</Value>
     </Setting>
   </Settings>
 </SettingsFile>

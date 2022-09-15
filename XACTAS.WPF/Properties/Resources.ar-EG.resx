@@ -122,33 +122,33 @@
     <value>..\Resources\basic.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+    <value>خطأ</value>
   </data>
   <data name="ErrorLaunchAs" xml:space="preserve">
-    <value>Ошибка запуска Android Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Android и укажите путь к программе.</value>
+    <value>الروبوت ستوديو خطأ بدء التشغيل ، وربما البرنامج غير موجود في المسار المحدد. في الزاوية اليمنى السفلى ، انقر على مجلد الروبوت وتحديد المسار إلى البرنامج.</value>
   </data>
   <data name="ErrorLaunchVs" xml:space="preserve">
-    <value>Ошибка запуска Visual Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Visual Studio и укажите путь к программе.</value>
+    <value>خطأ بدء التشغيل فيسوال ستوديو ، قد لا يكون البرنامج موجودا في المسار المحدد. في الزاوية اليمنى السفلى ، انقر على مجلد فيسوال ستوديو وحدد المسار إلى البرنامج.</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.3.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github.</value>
+    <value>افتحه xactas.dimanrus.ru لمزيد من المعلومات. الإصدار: 2.3.0. الرموز تنتمي إلى الرموز 8 قانون العمل (icons8.ru ). الترخيص هو غل-3.0. شفرة المصدر متاحة على جيثب.</value>
   </data>
   <data name="Information" xml:space="preserve">
-    <value>Информация</value>
+    <value>المعلومات</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Язык</value>
+    <value>اللغة</value>
   </data>
   <data name="Project" xml:space="preserve">
-    <value>Проекты</value>
+    <value>المشاريع</value>
   </data>
   <data name="ProjectAlreadyAdded" xml:space="preserve">
-    <value>Проект уже добавлен!</value>
+    <value>تمت إضافة المشروع بالفعل!</value>
   </data>
   <data name="ProjectWillRemovedOrMoved" xml:space="preserve">
-    <value>Проект был удалён или перемещён, он будет удалён из списка проектов</value>
+    <value>تم حذف المشروع أو نقله ، سيتم إزالته من قائمة المشاريع</value>
   </data>
   <data name="SelectProject" xml:space="preserve">
-    <value>Выберите проект Xamarin.Android</value>
+    <value>حدد مشروع زامارين.الروبوت</value>
   </data>
 </root>

@@ -117,38 +117,80 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\basic.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="addUi" xml:space="preserve">
+    <value>إضافة مشروع</value>
   </data>
-  <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+  <data name="asui" xml:space="preserve">
+    <value>فتح مشروع في استوديو أندرويد</value>
   </data>
-  <data name="ErrorLaunchAs" xml:space="preserve">
-    <value>Ошибка запуска Android Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Android и укажите путь к программе.</value>
+  <data name="bug" xml:space="preserve">
+    <value>الأخطاء</value>
   </data>
-  <data name="ErrorLaunchVs" xml:space="preserve">
-    <value>Ошибка запуска Visual Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Visual Studio и укажите путь к программе.</value>
+  <data name="code" xml:space="preserve">
+    <value>شفرة المصدر</value>
   </data>
-  <data name="Info" xml:space="preserve">
-    <value>Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.3.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github.</value>
+  <data name="copyDimanrus" xml:space="preserve">
+    <value>2022 ديمتري سوروكين</value>
+    <comment>footer</comment>
   </data>
-  <data name="Information" xml:space="preserve">
-    <value>Информация</value>
+  <data name="copyIcons" xml:space="preserve">
+    <value>الرموز تنتمي إلى</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Язык</value>
+  <data name="description" xml:space="preserve">
+    <value>هذا التطبيق سوف يسمح لك لإنشاء مستخدم interface .NET تطبيقات الروبوت في الروبوت ستوديو. في الوقت نفسه ، سيتم مزامنة جميع التغييرات التي تحدث في فيسوال ستوديو أو أندرويد ستوديو.</value>
   </data>
-  <data name="Project" xml:space="preserve">
-    <value>Проекты</value>
+  <data name="download" xml:space="preserve">
+    <value>تحميل</value>
   </data>
-  <data name="ProjectAlreadyAdded" xml:space="preserve">
-    <value>Проект уже добавлен!</value>
+  <data name="downloadFile" xml:space="preserve">
+    <value>لتطبيق للعمل ، تحتاج إلى تحميل صافي 6 وقت التشغيل و فس 2015-2022 ، إذا لم يكن لديك تثبيتها حتى الآن.</value>
   </data>
-  <data name="ProjectWillRemovedOrMoved" xml:space="preserve">
-    <value>Проект был удалён или перемещён, он будет удалён из списка проектов</value>
+  <data name="folderasUi" xml:space="preserve">
+    <value>تثبيت مسار الروبوت ستوديو</value>
   </data>
-  <data name="SelectProject" xml:space="preserve">
-    <value>Выберите проект Xamarin.Android</value>
+  <data name="folderUi" xml:space="preserve">
+    <value>فتح مجلد المشروع</value>
+  </data>
+  <data name="foldervsUi" xml:space="preserve">
+    <value>تحديد مسار فيسوال ستوديو</value>
+  </data>
+  <data name="idea" xml:space="preserve">
+    <value>الأفكار</value>
+  </data>
+  <data name="informationUi" xml:space="preserve">
+    <value>معلومات حول التطبيق</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="languageUi" xml:space="preserve">
+    <value>تغيير اللغة</value>
+  </data>
+  <data name="launchUi" xml:space="preserve">
+    <value>بدء التزامن بين إيدس.</value>
+  </data>
+  <data name="rate" xml:space="preserve">
+    <value>التعليقات</value>
+  </data>
+  <data name="removeUi" xml:space="preserve">
+    <value>حذف مشروع من تطبيق</value>
+  </data>
+  <data name="rider" xml:space="preserve">
+    <value>لإنشاء مستخدم أصلي interface .NET يمكن تطبيقات الروبوت استخدام رايدر ، ولكن يتم دفعها.</value>
+  </data>
+  <data name="stopUi" xml:space="preserve">
+    <value>وقف التزامن بين إيدس</value>
+  </data>
+  <data name="support" xml:space="preserve">
+    <value>الدعم</value>
+  </data>
+  <data name="themeUi" xml:space="preserve">
+    <value>تغيير موضوع التطبيق</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
+  <data name="vsUi" xml:space="preserve">
+    <value>فتح مشروع في فيسوال ستوديو</value>
   </data>
 </root>

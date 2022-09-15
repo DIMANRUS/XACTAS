@@ -122,33 +122,33 @@
     <value>..\Resources\basic.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Error" xml:space="preserve">
-    <value>Ошибка</value>
+    <value>错误</value>
   </data>
   <data name="ErrorLaunchAs" xml:space="preserve">
-    <value>Ошибка запуска Android Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Android и укажите путь к программе.</value>
+    <value>Android Studio 启动错误，可能程序在指定路径不存在。 在右下角，单击 Android 文件夹并指定程序的路径。</value>
   </data>
   <data name="ErrorLaunchVs" xml:space="preserve">
-    <value>Ошибка запуска Visual Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Visual Studio и укажите путь к программе.</value>
+    <value>Visual Studio 启动错误，程序可能不存在于指定的路径。 在右下角，单击 Visual Studio 文件夹并指定程序的路径。</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.3.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github.</value>
+    <value>打开它 xactas.dimanrus.ru 有关更多信息。 版本:2.3.0. 图标属于图标8LC(icons8.ru )。 许可证是GPL-3.0。 源代码可在Github上找到。</value>
   </data>
   <data name="Information" xml:space="preserve">
-    <value>Информация</value>
+    <value>资料</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Язык</value>
+    <value>语言</value>
   </data>
   <data name="Project" xml:space="preserve">
-    <value>Проекты</value>
+    <value>工程项目</value>
   </data>
   <data name="ProjectAlreadyAdded" xml:space="preserve">
-    <value>Проект уже добавлен!</value>
+    <value>该项目已被添加！</value>
   </data>
   <data name="ProjectWillRemovedOrMoved" xml:space="preserve">
-    <value>Проект был удалён или перемещён, он будет удалён из списка проектов</value>
+    <value>项目已被删除或移动，它将从项目列表中删除</value>
   </data>
   <data name="SelectProject" xml:space="preserve">
-    <value>Выберите проект Xamarin.Android</value>
+    <value>选择Xamarin项目。机器人</value>
   </data>
 </root>
