@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="basic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\basic.zip;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Error" xml:space="preserve">
     <value>Ошибка</value>
   </data>
@@ -131,7 +127,7 @@
     <value>Ошибка запуска Visual Studio, возможно программы не существует по указанному пути. В правом нижнем углу нажмите на папку с Visual Studio и укажите путь к программе.</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.3.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github.</value>
+    <value>Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.4.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github.</value>
   </data>
   <data name="Information" xml:space="preserve">
     <value>Информация</value>

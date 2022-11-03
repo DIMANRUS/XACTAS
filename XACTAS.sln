@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XACTAS.WPF", "XACTAS.WPF\XA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XACTAS.WEB", "XACTAS.WEB\XACTAS.WEB.csproj", "{E58B2AA6-0B20-4615-880C-53E4B3AEBEC8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{7B579CC3-3395-4B80-A909-D0839B7E2D01}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0E3655BA-A19C-47EC-A3E3-C2D49E5D221D}"
 	ProjectSection(SolutionItems) = preProject
 		setup.iss = setup.iss
@@ -79,9 +77,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{4EEC52C0-BE26-40F8-8B43-A5857DA465DE} = {7B579CC3-3395-4B80-A909-D0839B7E2D01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D5E9CE44-DB4B-42A4-A1E4-7B028B36CA18}

@@ -120,7 +120,7 @@
   <data name="addUi" xml:space="preserve">
     <value>إضافة مشروع</value>
   </data>
-  <data name="asui" xml:space="preserve">
+  <data name="asUi" xml:space="preserve">
     <value>فتح مشروع في استوديو أندرويد</value>
   </data>
   <data name="bug" xml:space="preserve">

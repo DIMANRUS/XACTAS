@@ -15,61 +15,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="https://www.youtube.com/watch?v=xyG8lwxvC9s">
-                        <img src="images/navbar/video.webp" alt="" />@_localizer["video"]
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS">
-                        <img src="images/navbar/code.webp" alt="" /><span>@_localizer["code"]</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS/issues">
-                        <img src="images/navbar/bug.webp" alt="" /><span>@_localizer["bug"]</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" target="_parent" href="https://github.com/DIMANRUS/XACTAS/discussions">
-                        <img src="images/navbar/idea.webp" alt="" /><span>@_localizer["idea"]</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://dimanrus.ru/support">
-                        <img src="images/navbar/support.webp" alt="" /><span>@_localizer["support"]</span>
-                    </a>
-                </li>
+                @foreach (var navItem in navItems)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" target="_parent" href="@navItem.Url">
+                            <img src="@navItem.Image" alt="" />@_localizer[navItem.Name]
+                        </a>
+                    </li>
+                }
                 <li class="nav-item dropdown li-select-language">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="images/languages/language.webp" alt="" /><span>@_localizer["language"]</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("en"))">
-                                <img src="images/languages/usa.webp" alt="" /><span>English</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ru"))">
-                                <img src="images/languages/russia.webp" alt="" /><span>Русский</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("zh"))">
-                                <img src="images/languages/china.webp" alt="" /><span>中文</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("tr"))">
-                                <img src="images/languages/turlish.webp" alt="" /><span>Türkçe</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage("ar"))">
-                                <img src="images/languages/arabic.webp" alt="" /><span>العربية</span>
-                            </a>
-                        </li>
+                        @foreach (var languageItem in languageItems)
+                        {
+                            <li>
+                                <a class="dropdown-item" @onclick="@(_ => OnSelectedLanguage(languageItem.Id))">
+                                    <img src="@languageItem.Image" alt="" /><span>@languageItem.Name</span>
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </li>
             </ul>
@@ -79,24 +45,21 @@
 <!--#endregion-->
 <section class="topBlockSection">
     <div class="container justify-content-center">
-        @*   <div class="logo-block">*@
         <img class="xactas-logo" src="images/xactas.webp" alt="" title="logo" />
         <h1>XACTAS</h1>
-        @*        </div>*@
         <h2>@_localizer["description"]</h2>
         <div class="download-block">
             <img class="d-inline-block" height="50" width="50" alt="" src="images/windows.webp" />
             <div class="d-inline-block">
                 <p>WINDOWS</p>
-                <p>2.3.0</p>
+                <p>2.4.0</p>
             </div>
             <a href="/App/DownloadWinApp" class="d-inline-block"><img src="images/navbar/download.webp" /></a>
-            @*            <a href="/App/DownloadWinApp"><input class="btn btn-primary" type="button" value="Скачать" /></a>*@
         </div>
     </div>
 </section>
 <section class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center additionals-download-block">
         <div class="corner-block col-xl-4">
             <p>@_localizer["rider"]</p>
             <a href="https://www.jetbrains.com/ru-ru/rider/" class="btn btn-primary" style="display: block">@_localizer["download"]</a>
@@ -156,41 +119,81 @@
         </span>
     </div>
 </section>
-@*<section class="container justify-content-center">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</section>*@
 @code {
+    #region Methods
     public void OnSelectedLanguage(string culture) =>
-        _navigationManager.NavigateTo($"/Culture/SetCulture?culture={Uri.EscapeDataString(culture)}", true);
+            _navigationManager.NavigateTo($"/Culture/SetCulture?culture={Uri.EscapeDataString(culture)}", true);
+    #endregion
 
+    #region Collections
+    readonly IEnumerable<NavItem> navItems = new List<NavItem>()
+    {
+        new(){
+            Name = "video",
+            Url = "https://www.youtube.com/watch?v=xyG8lwxvC9s"
+        },
+        new(){
+            Name = "code",
+            Url = "https://github.com/DIMANRUS/XACTAS"
+        },
+        new(){
+            Name = "bug",
+            Url = "https://github.com/DIMANRUS/XACTAS/issues"
+        },
+        new(){
+            Name = "idea",
+            Url = "https://github.com/DIMANRUS/XACTAS/discussions"
+        },
+        new(){
+            Name = "support",
+            Url = "https://dimanrus.ru/support"
+        }
+    };
+    readonly IEnumerable<LanguageItem> languageItems = new List<LanguageItem>(){
+        new(){
+            Id = "en",
+            Name =  "English"
+        },
+        new(){
+            Id = "ru",
+            Name = "Русский"
+        },
+        new(){
+            Id = "zh",
+            Name = "中文"
+        },
+        new(){
+            Id = "tr",
+            Name = "Türkçe"
+        },
+        new(){
+            Id = "ar",
+            Name = "العربية"
+        }
+    };
+    #endregion
+
+    #region Initialization
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
             await JS.InvokeVoidAsync("popoverInit");
     }
+    #endregion
+
+    #region Classes
+    class NavItem
+    {
+        public string Name { get; set; }
+        public string Image => $"images/navbar/{Name}.webp";
+        public string Url { get; set; }
+    }
+
+    class LanguageItem
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Image => $"images/languages/{Id}.webp";
+    }
+    #endregion
 }

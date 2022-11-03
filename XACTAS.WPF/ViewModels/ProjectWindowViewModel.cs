@@ -2,7 +2,7 @@
 
 public class ProjectWinowViewModel : INotifyPropertyChanged
 {
-    #region Инициализация
+    #region Constructors
     public ProjectWinowViewModel()
     {
         BackgroundBrush.Color = Settings.Default.IsDarkTheme ? Colors.Black : Colors.White;
@@ -10,7 +10,7 @@ public class ProjectWinowViewModel : INotifyPropertyChanged
         ImageSourceCurrentLanguage = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/Languages/{Settings.Default.Language}.png"));
         Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Language);
 
-        #region Инициализация комманд
+        #region Commands Initializations
         ChangeTheme = new RelayCommand(() =>
         {
             Settings.Default.IsDarkTheme = !Settings.Default.IsDarkTheme;
@@ -66,11 +66,11 @@ public class ProjectWinowViewModel : INotifyPropertyChanged
     #endregion
 
     #region  Команды
-    public ICommand ChangeTheme { get; }
-    public ICommand ChangeLanguage { get; }
+    public ICommand ChangeTheme { get; private init; }
+    public ICommand ChangeLanguage { get; private init; }
     #endregion
 
-    #region Реализация INotifyPropertyChanged
+    #region INotifyPropertyChanged Realization
     public event PropertyChangedEventHandler PropertyChanged;
     protected void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
     {

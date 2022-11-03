@@ -4,7 +4,7 @@ namespace XACTAS.WPF.Windows;
 
 public partial class MainWindow
 {
-    #region Initialization
+    #region Constructors
     public MainWindow()
     {
         InitializeComponent();
@@ -17,6 +17,7 @@ public partial class MainWindow
     private FileSystemWatcher _watcherVisualStudioProject;
     private FileSystemWatcher _watcherAndroidStudioProject;
     private Project _currentProject;
+    private const string _fileExtensionPattern = "\\.[0-9a-z]+$";
     #endregion
 
     #region Watchers Visual Studio Project
@@ -27,8 +28,11 @@ public partial class MainWindow
         {
             try
             {
-                File.Delete(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
-                File.Copy(e.FullPath, @$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
+                if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
+                {
+                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                }
+                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}", true);
             }
             catch
             {
@@ -44,8 +48,20 @@ public partial class MainWindow
         {
             try
             {
-                File.Delete(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.OldName}");
-                File.Copy(e.FullPath, @$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
+                if (Regex.Match(e.OldName, _fileExtensionPattern).Value == string.Empty)
+                {
+                    DirectoryInfo oldDirectory = new(@$"ASProject\\app\\src\\main\\res\\{e.OldName}\");
+                    foreach (var file in oldDirectory.GetFiles())
+                        file.Delete();
+                    Directory.Delete(@$"ASProject\app\src\main\res\{e.OldName}");
+                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                    DirectoryInfo directoryInfo = new(e.FullPath);
+                    foreach (var file in directoryInfo.GetFiles())
+                        File.Copy(file.FullName, @$"ASProject\app\src\main\res\{e.Name}\{file.Name}");
+                    return;
+                }
+                File.Delete(@$"ASProject\app\src\main\res\{e.OldName}");
+                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}");
             }
             catch
             {
@@ -60,7 +76,14 @@ public partial class MainWindow
         {
             try
             {
-                File.Delete(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
+                if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
+                {
+                    DirectoryInfo directoryInfo = new(@$"ASProject\app\src\main\res\{e.Name}");
+                    foreach (var file in directoryInfo.GetFiles())
+                        file.Delete();
+                    directoryInfo.Delete();
+                }
+                File.Delete(@$"ASProject\app\src\main\res\{e.Name}");
             }
             catch
             {
@@ -75,11 +98,11 @@ public partial class MainWindow
         {
             try
             {
-                File.Copy(e.FullPath, @$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
-            }
-            catch (UnauthorizedAccessException)
-            {
-                Directory.CreateDirectory(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\{e.Name}");
+                if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
+                {
+                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                }
+                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}");
             }
             catch
             {
@@ -93,18 +116,18 @@ public partial class MainWindow
     private void WathcherAndroidStudioProject_Changed(object sender, FileSystemEventArgs e)
     {
         _watcherVisualStudioProject.EnableRaisingEvents = false;
-        //try
-        //{
-        if (e.FullPath[^1] != '~' && e.FullPath.Split(@"\")[^1].Split(".").Length == 2)
+        try
         {
-            File.Delete(_currentProject.VsProjectPath + @$"\Resources\{e.Name}");
-            File.Copy(e.FullPath, _currentProject.VsProjectPath + @$"\Resources\{e.Name}");
+            if (e.FullPath[^1] != '~' && e.FullPath.Split(@"\")[^1].Split(".").Length == 2)
+            {
+                File.Delete(_currentProject.VsProjectPath + @$"\Resources\{e.Name}");
+                File.Copy(e.FullPath, _currentProject.VsProjectPath + @$"\Resources\{e.Name}");
+            }
         }
-        //}
-        //catch
-        //{
-        //    // ignored
-        //}
+        catch
+        {
+            // ignored
+        }
         _watcherVisualStudioProject.EnableRaisingEvents = true;
     }
     #endregion
@@ -112,7 +135,7 @@ public partial class MainWindow
     #region  Events Realizations
     private async void Page_Loaded(object sender, RoutedEventArgs e)
     {
-        await using (var fileStream = File.Open(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\data.json", FileMode.Open))
+        await using (var fileStream = File.Open(@$"data.json", FileMode.Open))
         {
             _projects = await JsonSerializer.DeserializeAsync<BindingList<Project>>(fileStream);
         }
@@ -153,47 +176,27 @@ public partial class MainWindow
             return;
     }
 
-    private async void LaunchVS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    private void LaunchVS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         try
         {
-            if (StopBlock.Visibility != Visibility.Collapsed)
-                return;
-            if (await LaunchWatcher((FrameworkElement)sender))
-            {
-                Process.Start(Settings.Default.VisualStudioPath, _currentProject.VsProjectPathSln);
-            }
-            else
-            {
-                ShowErrorMessageBox(Properties.Resources.ProjectWillRemovedOrMoved);
-            }
+            Process.Start(Settings.Default.VisualStudioPath, _currentProject.VsProjectPathSln);
         }
         catch
         {
-            StopWatcher();
             ShowErrorMessageBox(Properties.Resources.ErrorLaunchVs);
         }
     }
 
-    private async void LaunchAS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    private void LaunchAS_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         try
         {
-            if (StopBlock.Visibility != Visibility.Collapsed)
-                return;
-            if (await LaunchWatcher((FrameworkElement)sender))
-            {
-                Process.Start(Settings.Default.AndroidStudioPath, @$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject");
-            }
-            else
-            {
-                ShowErrorMessageBox(Properties.Resources.ProjectWillRemovedOrMoved);
-            }
+            Process.Start(Settings.Default.AndroidStudioPath, @$"ASProject");
         }
-        catch
+        catch (Exception ex)
         {
-            StopWatcher();
-            ShowErrorMessageBox(Properties.Resources.ErrorLaunchAs);
+            ShowErrorMessageBox(Properties.Resources.ErrorLaunchAs + $"Error: {ex.Message}");
         }
     }
 
@@ -241,8 +244,8 @@ public partial class MainWindow
     #region Private Methods
     private void StopWatcher()
     {
-        _watcherAndroidStudioProject.Dispose();
-        _watcherVisualStudioProject.Dispose();
+        _watcherAndroidStudioProject?.Dispose();
+        _watcherVisualStudioProject?.Dispose();
         StopBlock.Visibility = Visibility.Collapsed;
         OptionBlock.Visibility = Visibility.Visible;
         AddProjectBlock.Visibility = Visibility.Visible;
@@ -256,7 +259,7 @@ public partial class MainWindow
         _watcherVisualStudioProject.Renamed += WathcherVisualStudioProject_Renamed;
         _watcherVisualStudioProject.Changed += WathcherVisualStudioProject_Changed;
         _watcherVisualStudioProject.IncludeSubdirectories = true;
-        _watcherAndroidStudioProject = new FileSystemWatcher(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res");
+        _watcherAndroidStudioProject = new FileSystemWatcher(@$"ASProject\app\src\main\res");
         _watcherAndroidStudioProject.Changed += WathcherAndroidStudioProject_Changed;
         _watcherAndroidStudioProject.IncludeSubdirectories = true;
         _watcherAndroidStudioProject.EnableRaisingEvents = true;
@@ -270,10 +273,14 @@ public partial class MainWindow
         {
             DeleteAllFilesFromAndroidStudioProject();
             CreateWatcher();
-            var directoryInfo = new DirectoryInfo(_currentProject.VsProjectPath + @"\Resources\layout");
-            foreach (var file in directoryInfo.GetFiles())
+            var directoryInfo = new DirectoryInfo(_currentProject.VsProjectPath + @"\Resources");
+            foreach (var folder in directoryInfo.GetDirectories())
             {
-                File.Copy(file.FullName, @$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\layout\{file.Name}");
+                Directory.CreateDirectory($"ASProject\\app\\src\\main\\res\\{folder.Name}");
+                foreach (var file in folder.GetFiles())
+                {
+                    File.Copy(file.FullName, @$"ASProject\app\src\main\res\{folder.Name}\{file.Name}", true);
+                }
             }
             LaunchingProjectName.Text = Path.GetFileNameWithoutExtension(_currentProject.VsProjectPathSln);
             StopBlock.Visibility = Visibility.Visible;
@@ -295,7 +302,7 @@ public partial class MainWindow
             VsProjectPath = vsPath,
             Name = Path.GetFileNameWithoutExtension(_openFileDialog.FileName)
         };
-        await using (var write = File.Open(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\data.json", FileMode.Open))
+        await using (var write = File.Open(@$"data.json", FileMode.Open))
         {
             _projects?.Add(newProject);
             await JsonSerializer.SerializeAsync(write, _projects);
@@ -306,7 +313,7 @@ public partial class MainWindow
     {
         Project project = _projects.FirstOrDefault(x => x.ProjectId == id);
         _projects.Remove(project);
-        await using (StreamWriter write = new(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\data.json"))
+        await using (StreamWriter write = new(@$"data.json"))
         {
             await write.WriteAsync("");
             await JsonSerializer.SerializeAsync(write.BaseStream, _projects);
@@ -317,9 +324,14 @@ public partial class MainWindow
 
     private static void DeleteAllFilesFromAndroidStudioProject()
     {
-        DirectoryInfo directoryInfo = new(@$"C:\Users\{Environment.UserName}\Documents\DIMANRUS\XACTAS\ASProject\app\src\main\res\layout");
-        foreach (var file in directoryInfo.GetFiles())
-            File.Delete(file.FullName);
+        DirectoryInfo directoryInfo = new($@"ASProject\app\src\main\res");
+        var directories = directoryInfo.GetDirectories();
+        foreach (var folder in directories)
+        {
+            foreach (var file in folder.GetFiles())
+                File.Delete(file.FullName);
+            Directory.Delete(folder.FullName);
+        }
     }
 
     #region Message Boxes
