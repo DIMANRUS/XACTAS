@@ -53,29 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ASProject\.idea\compiler.xml" />
-    <Content Include="ASProject\.idea\gradle.xml" />
-    <Content Include="ASProject\.idea\misc.xml" />
-    <Content Include="ASProject\.idea\workspace.xml" />
     <Content Include="xactas.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="ASProject\.gradle\7.4\checksums\checksums.lock" />
-    <None Include="ASProject\.gradle\7.4\checksums\md5-checksums.bin" />
-    <None Include="ASProject\.gradle\7.4\checksums\sha1-checksums.bin" />
-    <None Include="ASProject\.gradle\7.4\dependencies-accessors\dependencies-accessors.lock" />
-    <None Include="ASProject\.gradle\7.4\dependencies-accessors\gc.properties" />
-    <None Include="ASProject\.gradle\7.4\executionHistory\executionHistory.lock" />
-    <None Include="ASProject\.gradle\7.4\fileChanges\last-build.bin" />
-    <None Include="ASProject\.gradle\7.4\fileHashes\fileHashes.bin" />
-    <None Include="ASProject\.gradle\7.4\fileHashes\fileHashes.lock" />
-    <None Include="ASProject\.gradle\7.4\gc.properties" />
-    <None Include="ASProject\.gradle\buildOutputCleanup\buildOutputCleanup.lock" />
-    <None Include="ASProject\.gradle\buildOutputCleanup\cache.properties" />
-    <None Include="ASProject\.gradle\buildOutputCleanup\outputFiles.bin" />
-    <None Include="ASProject\.gradle\vcs-1\gc.properties" />
-    <None Include="ASProject\.idea\.gitignore" />
   </ItemGroup>
 
   <ItemGroup>
@@ -193,7 +171,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ASProject\.gradle\7.4\vcsMetadata\" />
     <Folder Include="ASProject\app\libs\" />
     <Folder Include="ASProject\app\src\androidTest\java\com\example\" />
     <Folder Include="ASProject\app\src\main\java\com\example\basicproject\" />
