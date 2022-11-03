@@ -120,7 +120,7 @@
   <data name="addUi" xml:space="preserve">
     <value>添加项目</value>
   </data>
-  <data name="asui" xml:space="preserve">
+  <data name="asUi" xml:space="preserve">
     <value>在Android Studio中打开项目</value>
   </data>
   <data name="bug" xml:space="preserve">

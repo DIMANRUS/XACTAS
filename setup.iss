@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "XACTAS"
-#define MyAppVersion "2.3.0"
+#define MyAppVersion "2.4.0"
 #define MyAppPublisher "DIMANRUS"
 #define MyAppURL "https://xactas.dimanrus.ru/"
 #define MyAppExeName "XACTAS.exe"

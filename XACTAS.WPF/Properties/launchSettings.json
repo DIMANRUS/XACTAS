@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "XACTAS.WPF": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false,
+      "remoteDebugMachine": "10.0.0.10:4026"
+    }
+  }
+}

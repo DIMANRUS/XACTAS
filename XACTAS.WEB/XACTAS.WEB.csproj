@@ -40,6 +40,12 @@
     <Resource Include="wwwroot\images\uiApp\world.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Files\XACTAS Setup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

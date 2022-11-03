@@ -61,16 +61,6 @@ namespace XACTAS.WPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] basic {
-            get {
-                object obj = ResourceManager.GetObject("basic", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Ошибка.
         /// </summary>
         public static string Error {
@@ -98,7 +88,7 @@ namespace XACTAS.WPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.3.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github..
+        ///   Looks up a localized string similar to Откройте xactas.dimanrus.ru для получения дополнительной информации. Версия: 2.4.0. Иконки принадледат Icons8 LLC (icons8.ru). Лицензия AGPL-3.0. Исходный код доступен на Github..
         /// </summary>
         public static string Info {
             get {

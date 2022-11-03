@@ -1,3 +1,5 @@
+/*#region Base Style */
+
 @font-face {
     font-family: 'Cunia';
     src: url('../css/fonts/cunia.ttf');
@@ -47,18 +49,14 @@ body {
     padding: 0;
 }
 
-/*hr {
-    margin: 0 35%;
-    background-color: darkorange;
-    opacity: 1;
-    border-radius: 4px;
-}
-*/
 :root {
     --background: black;
     --color: white;
     --toggler_style: url("../images/toggle/toggle-dark.webp");
 }
+
+/*#endregion */
+
 /*#region NavBar*/
 /*#region DropDown Select languages*/
 .li-select-language ul li a img {
@@ -129,6 +127,7 @@ body {
     margin-right: 8px;
 }*/
 /*#endregion*/
+
 /*#region Buttons Bottom Menu*/
 #buttons_menu {
     position: fixed;
@@ -156,6 +155,7 @@ body {
     background: linear-gradient(90deg, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%);
 }
 /*#endregion*/
+
 /*#region Scroll Bar*/
 ::-webkit-scrollbar {
     width: 4px;
@@ -175,17 +175,15 @@ body {
         background-color: gray;
     }
 /*#endregion*/
+
 /*#region Top Block Section*/
 .topBlockSection {
-    /*  background: linear-gradient(-45deg, #7acf00, #00a2ff);*/
-    /* background-size: 400% 400%;*/
-    /*    animation: gradient 5s ease infinite;*/
     padding-top: 50px;
     background-image: url('../images/back.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     padding-bottom: 20px;
 }
 
@@ -204,11 +202,11 @@ body {
     }
 
 .xactas-logo {
-    /*    box-shadow: 0 0 10px black;*/
     border-radius: 25px;
     height: 200px;
     margin-top: 60px;
 }
+/*#endregion*/
 
 /*#region Download Block*/
 .download-block {
@@ -234,20 +232,6 @@ body {
         vertical-align: top;
         margin: 5px 0px;
     }
-/*#endregion*/
-/*#endregion*/
-/*#region Carousel Galary*/
-/*.carousel {
-    width: 50%;
-    margin: 0 auto;
-    height: fit-content;
-}*/
-/*#endregion*/
-/*#region Rider*/
-
-/*.rider-logo-block > a {
-    width: 100px;
-}*/
 
 .corner-block {
     margin: 20px;
@@ -265,35 +249,33 @@ body {
         color: var(--color);
     }
 /*#endregion*/
+
 /*#region Footer*/
-/*.footer {
-    text-align: center;
-}*/
 
 .footer h3 {
     font-size: 20px;
     letter-spacing: 20px;
     font-weight: bold;
-    /*        margin: 5px;*/
-    /*      font-family: 'Cunia';*/
 }
-
-/*.iconsupport img {
-    height: 35px;
-    margin-top: 10px;
-}*/
 
 .copyright {
     margin: 15px;
 }
 /*#endregion*/
+
 /*#region Style for Other Devices*/
 @media screen and (max-width: 1200px) {
     .rider-block {
         padding: 20px;
     }
 }
+@media screen and (max-width: 400px) {
+    .additionals-download-block{
+        margin: 10px;
+    }
+}
 /*#endregion*/
+
 /*#region Shared*/
 .shadow-corner {
     box-shadow: 0 0 10px var(--color);
@@ -309,6 +291,7 @@ body {
     float: left;
 }
 /*#endregion*/
+
 /*#region Ui Block*/
 .ui-block {
     margin: 10px;
@@ -316,7 +299,6 @@ body {
 }
 
     .ui-block > p {
-        /*     font-family: 'Cunia';*/
         font-weight: bold;
         margin-right: 10px;
         font-size: 21px;
