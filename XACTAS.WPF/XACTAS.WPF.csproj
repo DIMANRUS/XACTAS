@@ -16,7 +16,6 @@
     <FileVersion>2.4.0</FileVersion>
     <Version>2.4.0</Version>
     <SignAssembly>False</SignAssembly>
-    <AssemblyOriginatorKeyFile>DIMANRUS.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>true</DelaySign>
     <Platforms>AnyCPU;x64</Platforms>
     <Company>DIMANRUS</Company>
@@ -162,31 +161,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="ASProject\**">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ASProject\app\libs\" />
-    <Folder Include="ASProject\app\src\androidTest\java\com\example\" />
-    <Folder Include="ASProject\app\src\main\java\com\example\basicproject\" />
-    <Folder Include="ASProject\app\src\main\res\drawable-v24\" />
-    <Folder Include="ASProject\app\src\main\res\drawable\" />
-    <Folder Include="ASProject\app\src\main\res\layout\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-anydpi-v26\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-hdpi\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-mdpi\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-xhdpi\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-xxhdpi\" />
-    <Folder Include="ASProject\app\src\main\res\mipmap-xxxhdpi\" />
-    <Folder Include="ASProject\app\src\main\res\values-night\" />
-    <Folder Include="ASProject\app\src\main\res\values\" />
-    <Folder Include="ASProject\app\src\main\res\xml\" />
-    <Folder Include="ASProject\app\src\test\java\com\example\" />
   </ItemGroup>
 
 </Project>

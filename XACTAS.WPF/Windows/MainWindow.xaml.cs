@@ -1,4 +1,5 @@
-﻿using Project = Models.Project;
+﻿using System.IO.Compression;
+using Project = Models.Project;
 
 namespace XACTAS.WPF.Windows;
 
@@ -17,51 +18,52 @@ public partial class MainWindow
     private FileSystemWatcher _watcherVisualStudioProject;
     private FileSystemWatcher _watcherAndroidStudioProject;
     private Project _currentProject;
-    private const string _fileExtensionPattern = "\\.[0-9a-z]+$";
+    private const string _fileExtensionPattern = "\\.[0-9a-z~]+$";
+    private readonly string _pathLocalApplicationData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\DIMANRUS\XACTAS";
     #endregion
 
     #region Watchers Visual Studio Project
     private void WathcherVisualStudioProject_Changed(object sender, FileSystemEventArgs e)
     {
-        _watcherAndroidStudioProject.EnableRaisingEvents = false;
-        if (e.FullPath.Last() != '~')
+        if (!e.FullPath.ContainsAny("~", ".TMP"))
         {
             try
             {
                 if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
                 {
-                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                    Directory.CreateDirectory(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}");
+                    return;
                 }
-                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}", true);
+                File.Copy(e.FullPath, @$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}", true);
             }
             catch
             {
                 // ignored
             }
         }
-        _watcherAndroidStudioProject.EnableRaisingEvents = true;
     }
 
     private void WathcherVisualStudioProject_Renamed(object sender, RenamedEventArgs e)
     {
-        if (e.FullPath.Last() != '~')
+        if (!e.FullPath.ContainsAny("~", ".TMP"))
         {
             try
             {
                 if (Regex.Match(e.OldName, _fileExtensionPattern).Value == string.Empty)
                 {
-                    DirectoryInfo oldDirectory = new(@$"ASProject\\app\\src\\main\\res\\{e.OldName}\");
+                    DirectoryInfo oldDirectory = new(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.OldName}\");
                     foreach (var file in oldDirectory.GetFiles())
                         file.Delete();
-                    Directory.Delete(@$"ASProject\app\src\main\res\{e.OldName}");
-                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                    Directory.Delete(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.OldName}");
+                    Directory.CreateDirectory(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}");
                     DirectoryInfo directoryInfo = new(e.FullPath);
                     foreach (var file in directoryInfo.GetFiles())
-                        File.Copy(file.FullName, @$"ASProject\app\src\main\res\{e.Name}\{file.Name}");
+                        File.Copy(file.FullName, @$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}\{file.Name}", true);
                     return;
                 }
-                File.Delete(@$"ASProject\app\src\main\res\{e.OldName}");
-                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}");
+                if (File.Exists(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.OldName}"))
+                    File.Delete(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.OldName}");
+                File.Copy(e.FullPath, @$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}", true);
             }
             catch
             {
@@ -72,18 +74,19 @@ public partial class MainWindow
 
     private void WathcherVisualStudioProject_Deleted(object sender, FileSystemEventArgs e)
     {
-        if (e.FullPath.Last() != '~')
+        if (!e.FullPath.ContainsAny("~", ".TMP"))
         {
             try
             {
                 if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
                 {
-                    DirectoryInfo directoryInfo = new(@$"ASProject\app\src\main\res\{e.Name}");
+                    DirectoryInfo directoryInfo = new(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}");
                     foreach (var file in directoryInfo.GetFiles())
                         file.Delete();
                     directoryInfo.Delete();
+                    return;
                 }
-                File.Delete(@$"ASProject\app\src\main\res\{e.Name}");
+                File.Delete(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}");
             }
             catch
             {
@@ -94,15 +97,16 @@ public partial class MainWindow
 
     private void WathcherVisualStudioProject_Created(object sender, FileSystemEventArgs e)
     {
-        if (e.FullPath.Last() != '~')
+        if (!e.FullPath.ContainsAny("~", ".TMP"))
         {
             try
             {
                 if (Regex.Match(e.Name, _fileExtensionPattern).Value == string.Empty)
                 {
-                    Directory.CreateDirectory(@$"ASProject\app\src\main\res\{e.Name}");
+                    Directory.CreateDirectory(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}");
+                    return;
                 }
-                File.Copy(e.FullPath, @$"ASProject\app\src\main\res\{e.Name}");
+                File.Copy(e.FullPath, @$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{e.Name}", true);
             }
             catch
             {
@@ -118,10 +122,9 @@ public partial class MainWindow
         _watcherVisualStudioProject.EnableRaisingEvents = false;
         try
         {
-            if (e.FullPath[^1] != '~' && e.FullPath.Split(@"\")[^1].Split(".").Length == 2)
+            if (!e.FullPath.ContainsAny("~", ".TMP") && Regex.Match(e.Name, _fileExtensionPattern).Value != string.Empty)
             {
-                File.Delete(_currentProject.VsProjectPath + @$"\Resources\{e.Name}");
-                File.Copy(e.FullPath, _currentProject.VsProjectPath + @$"\Resources\{e.Name}");
+                File.Copy(e.FullPath, _currentProject.VsProjectPath + @$"\Resources\{e.Name}", true);
             }
         }
         catch
@@ -135,11 +138,24 @@ public partial class MainWindow
     #region  Events Realizations
     private async void Page_Loaded(object sender, RoutedEventArgs e)
     {
-        await using (var fileStream = File.Open(@$"data.json", FileMode.Open))
+        try
         {
-            _projects = await JsonSerializer.DeserializeAsync<BindingList<Project>>(fileStream);
+            if (!File.Exists(@$"{_pathLocalApplicationData}\data.json"))
+            {
+                ZipFile.ExtractToDirectory(@$"{_pathLocalApplicationData}\data.zip", _pathLocalApplicationData, true);
+                File.Delete($@"{_pathLocalApplicationData}\data.zip");
+            }
+            await using (var fileStream = File.Open(@$"{_pathLocalApplicationData}\data.json", FileMode.Open))
+            {
+                _projects = await JsonSerializer.DeserializeAsync<BindingList<Project>>(fileStream);
+            }
+            ProjectsControl.ItemsSource = _projects;
         }
-        ProjectsControl.ItemsSource = _projects;
+        catch (Exception ex)
+        {
+            ShowErrorMessageBox($"Error: {ex.Message}. Line: {ex.Source}");
+            Application.Current.Shutdown();
+        }
     }
 
     private async void AddProject_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -192,7 +208,7 @@ public partial class MainWindow
     {
         try
         {
-            Process.Start(Settings.Default.AndroidStudioPath, @$"ASProject");
+            Process.Start(Settings.Default.AndroidStudioPath, @$"{_pathLocalApplicationData}\ASProject");
         }
         catch (Exception ex)
         {
@@ -259,7 +275,7 @@ public partial class MainWindow
         _watcherVisualStudioProject.Renamed += WathcherVisualStudioProject_Renamed;
         _watcherVisualStudioProject.Changed += WathcherVisualStudioProject_Changed;
         _watcherVisualStudioProject.IncludeSubdirectories = true;
-        _watcherAndroidStudioProject = new FileSystemWatcher(@$"ASProject\app\src\main\res");
+        _watcherAndroidStudioProject = new FileSystemWatcher(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res");
         _watcherAndroidStudioProject.Changed += WathcherAndroidStudioProject_Changed;
         _watcherAndroidStudioProject.IncludeSubdirectories = true;
         _watcherAndroidStudioProject.EnableRaisingEvents = true;
@@ -272,20 +288,20 @@ public partial class MainWindow
         if (Directory.Exists(_currentProject?.VsProjectPath))
         {
             DeleteAllFilesFromAndroidStudioProject();
-            CreateWatcher();
             var directoryInfo = new DirectoryInfo(_currentProject.VsProjectPath + @"\Resources");
             foreach (var folder in directoryInfo.GetDirectories())
             {
-                Directory.CreateDirectory($"ASProject\\app\\src\\main\\res\\{folder.Name}");
+                Directory.CreateDirectory(@$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{folder.Name}");
                 foreach (var file in folder.GetFiles())
                 {
-                    File.Copy(file.FullName, @$"ASProject\app\src\main\res\{folder.Name}\{file.Name}", true);
+                    File.Copy(file.FullName, @$"{_pathLocalApplicationData}\ASProject\app\src\main\res\{folder.Name}\{file.Name}", true);
                 }
             }
             LaunchingProjectName.Text = Path.GetFileNameWithoutExtension(_currentProject.VsProjectPathSln);
             StopBlock.Visibility = Visibility.Visible;
             OptionBlock.Visibility = Visibility.Collapsed;
             AddProjectBlock.Visibility = Visibility.Collapsed;
+            CreateWatcher();
             return true;
         }
         await RemoveProject(int.Parse(img.Tag.ToString()!));
@@ -302,7 +318,7 @@ public partial class MainWindow
             VsProjectPath = vsPath,
             Name = Path.GetFileNameWithoutExtension(_openFileDialog.FileName)
         };
-        await using (var write = File.Open(@$"data.json", FileMode.Open))
+        await using (var write = File.Open(@$"{_pathLocalApplicationData}\data.json", FileMode.Open))
         {
             _projects?.Add(newProject);
             await JsonSerializer.SerializeAsync(write, _projects);
@@ -322,9 +338,9 @@ public partial class MainWindow
         ProjectsControl.ItemsSource = _projects;
     }
 
-    private static void DeleteAllFilesFromAndroidStudioProject()
+    private void DeleteAllFilesFromAndroidStudioProject()
     {
-        DirectoryInfo directoryInfo = new($@"ASProject\app\src\main\res");
+        DirectoryInfo directoryInfo = new($@"{_pathLocalApplicationData}\ASProject\app\src\main\res");
         var directories = directoryInfo.GetDirectories();
         foreach (var folder in directories)
         {
