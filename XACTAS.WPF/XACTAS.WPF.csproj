@@ -16,7 +16,6 @@
     <FileVersion>2.4.0</FileVersion>
     <Version>2.4.0</Version>
     <SignAssembly>False</SignAssembly>
-    <DelaySign>true</DelaySign>
     <Platforms>AnyCPU;x64</Platforms>
     <Company>DIMANRUS</Company>
     <IsPublishable>True</IsPublishable>
@@ -61,7 +60,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj">
+      <ReferenceSourceTarget></ReferenceSourceTarget>
+    </ProjectReference>
   </ItemGroup>
 
   <ItemGroup>
