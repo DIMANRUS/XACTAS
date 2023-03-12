@@ -5,6 +5,7 @@
     src: url('../css/fonts/cunia.ttf');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 .btn {
