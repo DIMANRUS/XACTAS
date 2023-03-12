@@ -11,12 +11,9 @@
 [Türk](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.TR.md) | [English](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.EN.md) | [中文](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.ZH.md) | [العربية](https://github.com/DIMANRUS/XACTAS/blob/main/Readmes/README.AR.md)
 
 ## Стек технологий
-- .NET 6
+- .NET 7
 - WPF
 - ASP.NET Core
-
-## Лицензия
-AGPL-3.0
 
 #### [DIMANRUS](dimanrus.ru)
 #### [XACTAS Сайт](https://xactas.dimanrus.ru/)
