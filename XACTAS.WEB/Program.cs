@@ -1,7 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-#region Подключение сервисов
+#region Services
 services.AddControllers();
 services.AddLocalization(option => option.ResourcesPath = "Resources");
 services.AddRazorPages();
@@ -10,7 +10,7 @@ services.AddServerSideBlazor();
 
 var app = builder.Build();
 
-#region Подключение Middleware
+#region Middleware
 if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 else
