@@ -1,3 +1,6 @@
+#### Я решил больше не разрабатывать данный продукт. Сайт будет тоже закрыт. Используйте Rider.
+#### I decided not to develop this product anymore. The site will also be closed. Use Rider.
+--------------------------
 # XACTAS
 
 ![](https://xactas.dimanrus.ru/images/Xactas.png)
